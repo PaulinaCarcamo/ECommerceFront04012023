@@ -1,0 +1,19 @@
+.success-container {
+    width: 100vw;
+    height: 44.6vw;
+    background: linear-gradient(#ffffff80,
+            #ffffff80),
+        url("../images/category1.jpg") center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.success-wrapper {
+    width: 20%;
+    padding: 20px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+}

@@ -1,0 +1,131 @@
+.cart-wrapper {
+    padding: 20px;
+}
+
+.cart-links {
+    display: flex;
+    padding: 20px;
+    margin: 0px 10px;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.cart-sections {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-elements {
+    flex: 3;
+}
+
+.cart-prod {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-right: 20px;
+    border-right: 0.5px solid #d3d3d3;
+}
+
+.cart-prod-img {
+    width: 200px;
+}
+
+.prod-details {
+    display: flex;
+}
+
+.prod-name-id {
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.order {
+    flex: 1;
+    padding: 20px;
+    height: 50vh;
+}
+
+.order-details {
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bag-del {
+    display: flex;
+    gap: 40px;
+}
+
+.del {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) {
+    .cart-wrapper {
+        padding: 0;
+    }
+
+    .cart-links {
+        padding: 20px 10px;
+    }
+
+    .cart-elements {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .cart-prod {
+        flex-direction: column;
+        margin: 0;
+        border-right: none;
+    }
+
+    .prod-details {
+        flex-direction: column;
+    }
+
+    .prod-name-id {
+        margin: 10px 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .cart-links {
+        padding: 0;
+        justify-content: center;
+        font-size: 12px;
+        gap: 20px;
+    }
+
+    .cart-sections {
+        flex-direction: column;
+    }
+
+    .cart-elements {
+        flex: 1;
+        margin: auto;
+    }
+
+    .prod-details {
+        font-size: 12px;
+    }
+
+    .order {
+        padding-bottom: 0;
+        border-top: 1.5px solid #000000;
+        border-bottom: 1.5px solid #000000;
+    }
+
+    .bag-del {
+        justify-content: right;
+        border-bottom: 0.5px solid #d3d3d3;
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+}

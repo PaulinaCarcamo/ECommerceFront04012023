@@ -1,0 +1,81 @@
+.acct-wrapper {
+    width: 100%;
+    border-top: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+}
+
+.profile {
+    display: flex;
+}
+
+.acct-left {
+    flex: 1;
+    padding-left: 40px;
+    border-top: 2px solid #000000;
+    border-right: 2px solid #000000;
+    background: linear-gradient(#ffffff49,
+            #ffffff93),
+        url("https://wallpaperaccess.com/full/1584142.jpg") center;
+    background-size: cover;
+}
+
+.acct-links li {
+    margin: 20px 0px;
+}
+
+.acct-right {
+    flex: 3;
+    border-top: 2px solid #000000;
+    padding-left: 40px;
+    padding-bottom: 40px;
+}
+
+.acct-input {
+    min-width: 40%;
+    margin: 20px 10px 0px 0px;
+    padding: 10px;
+}
+
+.acct-elements h2 {
+    margin-top: 40px;
+    margin-bottom: 0px;
+}
+
+.acct-left .acct-elements {
+    text-align: justify;
+}
+
+@media only screen and (max-width: 1024px) {
+    .acct-wrapper {
+        border-top: 1.5px solid #000000;
+        border-bottom: 1.5px solid #000000;
+    }
+
+    .profile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .acct-left {
+        padding: 10px;
+        border-right: none;
+        border-top: 1.5px solid #000000;
+    }
+
+    .acct-left h2 {
+        letter-spacing: 5px;
+        margin: 10px 0;
+    }
+
+    .acct-left button {
+        display: none;
+    }
+
+    .acct-right {
+        border-top: 1.5px solid #000000;
+    }
+
+    .acct-input {
+        width: 80%;
+    }
+}

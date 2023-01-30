@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@200&display=swap');
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Patrick Hand SC', cursive;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000000;
+}
+
+h1 {
+  text-align: center;
+  letter-spacing: 5px;
+  font-weight: normal;
+  font-size: 40px;
+}
+
+h2 {
+  font-family: 'Sofia Sans Extra Condensed', sans-serif;
+  letter-spacing: 2px;
+  font-size: 30px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.2);
+  opacity: 80%;
+}
+
+icon {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) {
+
+  h1 {
+    font-size: 22px;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  button {
+    font-size: 12px;
+  }
+}

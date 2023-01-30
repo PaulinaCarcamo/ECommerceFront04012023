@@ -1,0 +1,16 @@
+.ads-container {
+    height: 60px;
+    background-color: #282c34;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 768px) {
+    .ads-container {
+        padding: 0 15px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,15 @@
+.prod-img {
+    width: 50vh;
+    height: 30vh;
+}
+
+.prod-title h2 {
+    margin: 5px 10px;
+}
+
+@media only screen and (max-width: 480px) {
+    .prod-img {
+        width: 36vh;
+        height: 22vh;
+    }
+}
