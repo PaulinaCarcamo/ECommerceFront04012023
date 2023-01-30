@@ -13,7 +13,7 @@ const Popular = ({ prods, filters, sort }) => {
     useEffect(() => {
         const getProducts = async () => {
             try {
-                const res = await axios.get("http://localhost:5000/api/products");
+                const res = await axios.get("https://data.mongodb-api.com/app/data-exxux/endpoint/data/v1");
                 setProducts(res.data);
             } catch (err) { }
         };
