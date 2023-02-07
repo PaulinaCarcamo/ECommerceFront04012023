@@ -4,7 +4,7 @@ import axios from 'axios';
 import Product from './Product.js';
 import './popular.css'
 
-//Popular products on home page
+//POPULAR PRODUCTS ARE DISPLAYED ON HOME PAGE
 
 const Popular = ({ prods, filters, sort }) => {
     const [products, setProducts] = useState([]);
@@ -13,7 +13,7 @@ const Popular = ({ prods, filters, sort }) => {
     useEffect(() => {
         const getProducts = async () => {
             try {
-                const res = await axios.get("https://data.mongodb-api.com/app/data-exxux/endpoint/data/v1");
+                const res = await axios.get("http://localhost:5000/api/products");
                 setProducts(res.data);
             } catch (err) { }
         };

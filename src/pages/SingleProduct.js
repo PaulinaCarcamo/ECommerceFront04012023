@@ -1,24 +1,27 @@
-import { Tooltip } from '@mui/material';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { publicRequest } from '../requests/requestMethods.js';
+import Snackbar from '@mui/material/Snackbar';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 
 import { addProduct } from '../redux/cartRedux.js';
+import { publicRequest } from '../requests/requestMethods.js';
 import Navbar from '../components/Navbar.js';
 import Ads from '../components/Ads.js';
 import Footer from '../components/Footer.js';
 import './singleProduct.css';
 
-//Single product page shows one product, its details, its price and it contains a button to add products to cart.
+//THIS PAGE SHOWS ONE PRODUCT, ITS INFORMATION AND PRICE. IT ALSO CONTAINS A BUTTON TO ADD PRODUCTS TO CART.
 
 const Product = () => {
 
-  const location = useLocation()
+  const location = useLocation();
   const id = location.pathname.split("/")[2];
-  const [product, setProduct] = useState({})
-  const [quantity, setQuantity] = useState(1)
-  const dispatch = useDispatch()
+  const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [open, setOpen] = useState(false);
+  const dispatch = useDispatch();
 
   console.log(setQuantity);
 
@@ -31,6 +34,15 @@ const Product = () => {
     };
     getProduct();
   }, [id]);
+
+  const openSnackbar = () => {
+    setOpen(true);
+  };
+
+  const closeSnackbar = (event, reason) => {
+    if ("clickaway" === reason) return;
+    setOpen(false);
+  };
 
   return (
     <div>
@@ -49,8 +61,9 @@ const Product = () => {
           <div>
             <h2>$ {product.price}</h2>
 
-            <Tooltip title="+1" placement="bottom-end">
-              <button onClick={() => dispatch(addProduct
+            <button onClick={() => {
+              openSnackbar();
+              dispatch(addProduct
                 ({
                   id: product._id,
                   title: product.title,
@@ -58,9 +71,38 @@ const Product = () => {
                   price: product.price,
                   img: product.img,
                   quantity,
-                }),
-              )}>ADD TO CART</button>
-            </Tooltip>
+                })
+              );
+            }}>ADD TO CART</button>
+
+            <Snackbar
+              anchorOrigin={{
+                horizontal: "left",
+                vertical: "bottom",
+              }}
+              ContentProps={{
+                sx: {
+                  background: "purple"
+                }
+              }}
+              open={open}
+              autoHideDuration={3000}
+              message={(`"${product.title}" ADDED TO CART`)}
+              onClose={closeSnackbar}
+
+              action={
+                <div>
+                  <IconButton
+                    size="small"
+                    aria-label="close"
+                    color="inherit"
+                    onClick={closeSnackbar}
+                  >
+                    <CloseIcon fontSize="small" />
+                  </IconButton>
+                </div>
+              }
+            />
           </div>
         </div>
       </div>

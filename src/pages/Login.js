@@ -7,7 +7,7 @@ import Ads from '../components/Ads.js';
 import Footer from '../components/Footer.js';
 import './login.css'
 
-//Access to account after registration is done
+//THIS PAGE SHOWS A FORM TO ACCESS TO ACCOUNT AFTER REGISTRATION IS DONE.
 
 const Login = () => {
     const [email, setEmail] = useState("")

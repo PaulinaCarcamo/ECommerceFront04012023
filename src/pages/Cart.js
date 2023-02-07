@@ -1,17 +1,16 @@
-import { DeleteForever, ShoppingBagOutlined } from '@mui/icons-material';
-import { Badge } from '@mui/material';
-import PaypalCheckoutButton from '../components/PaypalCheckoutButton';
+import { DeleteForever, RemoveCircleOutlineRounded, AddCircleOutlineRounded } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
-import { removeProduct } from '../redux/cartRedux.js';
+import { removeProduct, incrementQuantity, decrementQuantity } from '../redux/cartRedux.js';
+import PaypalCheckout from '../components/PaypalCheckout.js'
 import Navbar from '../components/Navbar.js';
 import Ads from '../components/Ads.js';
 import Footer from '../components/Footer.js';
 import './cart.css';
 
-//Shopping cart sectio shows products selected and summary of the order made by the user.
+//SHOPPING CART SHOWS PRODUCTS SELECTED AND SUMMARY OF THE ORDER MADE BY USER.
 
 const Cart = () => {
     const products = useSelector(state => state.cart.products);
@@ -39,20 +38,25 @@ const Cart = () => {
                             {products?.map((item) => (
                                 <div className='cart-prod'>
                                     <div className='prod-details'>
-                                        <img className='cart-prod-img' alt='img' src={item.img} />
+                                        <Link to={`/product/${item.id}`}>
+                                            <img className='cart-prod-img' alt='img' src={item.img} />
+                                        </Link>
                                         <div className='prod-name-id'>
                                             <span><b>Product: </b>{item.title}</span>
                                             <span><b>ID: </b>{item.id}</span>
                                         </div>
                                     </div>
                                     <div className='price'><h2>$ {item.price}</h2></div>
-                                    
+
                                     <div className='bag-del'>
-                                        <p className='bag'>
-                                            <Badge badgeContent={item.quantity} color="secondary">
+                                        <h3 onClick={() => dispatch(decrementQuantity(item.id))}><RemoveCircleOutlineRounded /></h3>
+                                        <h3>{item.quantity}</h3>
+                                        <h3 onClick={() => dispatch(incrementQuantity(item.id))}><AddCircleOutlineRounded /></h3>
+                                        {/* <p className='bag'>
+                                            <Badge badgeContent={item.quantity} color="primary">
                                                 <ShoppingBagOutlined />
                                             </Badge>
-                                        </p>
+                                        </p> */}
                                         <p className='del'>
                                             <DeleteForever onClick={() =>
                                                 dispatch(removeProduct(item.id))}>
@@ -81,7 +85,7 @@ const Cart = () => {
                                 <span>Total</span>
                                 <span>$ {totalPrice()}</span>
                             </div>
-                            <PaypalCheckoutButton product={totalPrice()} />
+                            <PaypalCheckout product={totalPrice()} />
                         </div>
                     </div>
                 </div>

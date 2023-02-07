@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar.js';
 import Footer from '../components/Footer.js';
 import './account.css';
 
-//Account or profile, shows user information after registration
+//ACCOUNT SHOWS USER INFORMATION AFTER REGISTRATION
 
 const Profile = () => {
 

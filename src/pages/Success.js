@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './success.css'
 
-//Success page is shown after a purchase.
+//SUCCESS PAGE IS SHOWN AFTER A PURCHASE.
 
 const Success = () => {
     const location = useLocation()

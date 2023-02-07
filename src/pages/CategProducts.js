@@ -7,13 +7,14 @@ import Products from '../components/Products.js';
 import Footer from '../components/Footer.js';
 import './categProducts.css'
 
-//Products categorized. Shows products classified into their own categories.
+//THIS PAGE SHOWS PRODUCTS CLASSIFIED INTO THEIR OWN CATEGORIES.
 
 const CategProducts = () => {
   const location = useLocation();
   const categ = location.pathname.split("/")[2];
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState();
+  
 
   const filterItems = (e) => {
     const value = e.target.value;

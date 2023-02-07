@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { PayPalScriptProvider } from '@paypal/react-paypal-js'
+// import { PayPalScriptProvider } from '@paypal/react-paypal-js'
 
 import Home from './pages/Home.js'
 import AllProducts from './pages/AllProducts.js'
@@ -12,6 +12,8 @@ import Register from './pages/Register.js'
 import Account from './pages/Account.js'
 import Success from './pages/Success.js'
 import './App.css'
+
+import { PayPalScriptProvider } from '@paypal/react-paypal-js'
 
 const App = () => {
   const user = useSelector((state) => state.user.currentUser)

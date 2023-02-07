@@ -7,7 +7,7 @@ import Footer from '../components/Footer.js';
 import Navbar from '../components/Navbar.js';
 import './register.css';
 
-//Register section saves information from user
+//THIS PAGE SHOWS FORM TO REGISTER NEW USER'S INFORMATION.
 
 export default function Register() {
     const [email, setEmail] = useState("")
