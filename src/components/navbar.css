@@ -37,12 +37,12 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    text-transform: uppercase;
 }
 
 .nav-right .link {
     margin-left: 20px;
 }
-
 
 @media only screen and (max-width: 1024px) {
     .nav-container {

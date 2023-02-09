@@ -1,19 +1,19 @@
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 // import { PayPalScriptProvider } from '@paypal/react-paypal-js'
 
-import Home from './pages/Home.js'
-import AllProducts from './pages/AllProducts.js'
-import CategProducts from './pages/CategProducts.js'
-import Product from './pages/SingleProduct.js'
-import Cart from './pages/Cart.js'
-import Login from './pages/Login.js'
-import Register from './pages/Register.js'
-import Account from './pages/Account.js'
-import Success from './pages/Success.js'
-import './App.css'
+import Home from './pages/Home.js';
+import AllProducts from './pages/AllProducts.js';
+import CategProducts from './pages/CategProducts.js';
+import Product from './pages/SingleProduct.js';
+import Cart from './pages/Cart.js';
+import Login from './pages/Login.js';
+import Register from './pages/Register.js';
+import Account from './pages/Account.js';
+import Success from './pages/Success.js';
+import './App.css';
 
-import { PayPalScriptProvider } from '@paypal/react-paypal-js'
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 const App = () => {
   const user = useSelector((state) => state.user.currentUser)
@@ -28,8 +28,12 @@ const App = () => {
             <Route path='/product/:id' element={<Product />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/account' element={<Account />} />
+
+            {/* login ? <ContactUs /> : <Redirect to="/" /> */}
             <Route path='/success' element={<Success />} />
-            <Route path='/login' element={user ? <Navigate replace to="/account" /> : <Login />} />
+            <Route path='/login' element={<Login />} />
+            {/* <Route path='/login' element={user ? <Navigate replace to="/account" /> : <Login />} /> */}
+            {/* <Route path='/register' element={<Register />} /> */}
             <Route path='/register' element={<Register />} />
           </Routes>
         </BrowserRouter>

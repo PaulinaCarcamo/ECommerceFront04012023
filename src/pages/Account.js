@@ -17,12 +17,13 @@ const Profile = () => {
             <Ads />
             <Navbar />
             <div className='acct-wrapper'>
-                <h1>WELCOME {user.email}</h1>
+                <h1>WELCOME {user.username}</h1>
                 <div className='profile'>
                     <div className='acct-left'>
                         <div>
                             <h2>WE ARE GLAD TO SEE YOU AGAIN!</h2>
-                            <h2>{user.email}</h2>
+                            <h2>{user.username}</h2>
+                            <h3>{user.email}</h3>
                         </div>
                         <div className='acct-elements'>
                             <Link to='/allproducts'>
@@ -35,9 +36,9 @@ const Profile = () => {
                         <div className='acct-elements'>
                             <div>
                                 <h2>Account</h2>
-                                <input className='acct-input' placeholder="name" />
+                                <input className='acct-input' disabled placeholder={user.username} />
                                 <input className='acct-input' placeholder="last name" />
-                                <input className='acct-input' placeholder="email" />
+                                <input className='acct-input' disabled placeholder={user.email} />
                                 <input className='acct-input' placeholder="username" />
                                 <input className='acct-input' placeholder="country" />
                                 <input className='acct-input' placeholder="city" />

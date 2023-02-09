@@ -32,15 +32,26 @@ const AllProducts = () => {
       <h1>OUR PRODUCTS</h1>
       <div className='filter-wrapper'>
         <div>
-          <div>Filter By Brand</div>
-          <select className='select-options' name='brand' onChange={filterItems}>
-            <option disabled selected>Brand</option>
-            <option>Philips</option>
-            <option>Sony</option>
-            <option>TDK</option>
-            <option>Basf</option>
-            <option>Maxell</option>
-          </select>
+          <div>Filter By Brand and Type</div>
+          <div className='brand-type'>
+            <div>
+              <select className='select-options' name='brand' onChange={filterItems}>
+                <option disabled selected>Brand</option>
+                <option>Philips</option>
+                <option>TDK</option>
+                <option>Basf</option>
+                <option>Maxell</option>
+              </select>
+            </div>
+            <div>
+              <select className='select-options' name='categories' onChange={filterItems}>
+                <option disabled selected>Type</option>
+                <option>typei</option>
+                <option>typeii</option>
+                <option>typeiv</option>
+              </select>
+            </div>
+          </div>
         </div>
         <div>
           <div>Sort By Price</div>

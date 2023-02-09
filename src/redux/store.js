@@ -1,9 +1,9 @@
-//USING ACTIONS AND REDUCERS FROM CARTREDUX.JS
-//CREATING A GLOBAL STORE TO USE IT IN ALL PAGES AND COMPONENTS
+// //USING ACTIONS AND REDUCERS FROM CARTREDUX.JS
+// //CREATING A GLOBAL STORE TO USE IT IN ALL PAGES AND COMPONENTS
 
-import { configureStore, combineReducers } from "@reduxjs/toolkit"
-import cartReducer from "./cartRedux"
-import userReducer from "./userRedux"
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import cartReducer from "./cartRedux";
+import userReducer from "./userRedux";
 
 import {
     persistStore,
@@ -28,9 +28,7 @@ const rootReducer = combineReducers({ user: userReducer, cart: cartReducer })
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
-
-//CREATING STORE:
-export const store = configureStore({// OPENING NEW OBJECTS
+export const store = configureStore({
     reducer: persistedReducer,
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
@@ -39,6 +37,5 @@ export const store = configureStore({// OPENING NEW OBJECTS
             },
         }),
 })
-
 
 export let persistor = persistStore(store)
