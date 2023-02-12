@@ -22,12 +22,12 @@ const Profile = () => {
                     <div className='acct-left'>
                         <div>
                             <h2>WE ARE GLAD TO SEE YOU AGAIN!</h2>
-                            <h2>{user.username}</h2>
-                            <h3>{user.email}</h3>
+                            {/* <h2>{user.username}</h2>
+                            <h3>{user.email}</h3> */}
                         </div>
                         <div className='acct-elements'>
                             <Link to='/allproducts'>
-                                <div><button>SEE WHAT'S NEW!</button></div>
+                                <div><button>GO SHOPPING</button></div>
                             </Link>
                         </div>
                     </div>
@@ -35,7 +35,7 @@ const Profile = () => {
                     <div className='acct-right'>
                         <div className='acct-elements'>
                             <div>
-                                <h2>Account</h2>
+                                <h2>Profile</h2>
                                 <input className='acct-input' disabled placeholder={user.username} />
                                 <input className='acct-input' placeholder="last name" />
                                 <input className='acct-input' disabled placeholder={user.email} />

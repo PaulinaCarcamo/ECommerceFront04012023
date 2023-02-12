@@ -3,7 +3,7 @@ import { Facebook, Instagram, Mail, Phone, Pinterest, Room, Twitter, Radio } fro
 
 import './footer.css';
 import payment from '../images/payment.png';
-import LoginDialog from "./Login";
+// import LoginDialog from "./Login";
 
 const Footer = () => {
     return (
@@ -26,8 +26,8 @@ const Footer = () => {
                     <li><Link to='/' className="link">Home</Link></li>
                     <li><Link to='/allproducts' className="link">Shop</Link></li>
                     <li><Link to='/category/typeii' className="link">Chrome</Link></li>
-                    {/* <li><Link to='/login' className="link">Account</Link></li> */}
-                    <LoginDialog />
+                    <li><Link to='/register' className="link">Account</Link></li>
+                    {/* <LoginDialog /> */}
                     <li><Link to='/category/typei' className="link">Ferric</Link></li>
                     <li><Link to='/cart' className="link">Cart</Link></li>
                     <li><Link to='/category/typeiv' className="link">Metallic</Link></li>

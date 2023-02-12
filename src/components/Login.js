@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import { Error } from '@mui/icons-material';
+import { AccountCircle, Error, Home, Person, ShoppingCart } from '@mui/icons-material';
 import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -11,7 +11,12 @@ import Fab from '@mui/material/Fab';
 import CheckIcon from '@mui/icons-material/Check';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+import { emphasize, styled } from '@mui/material/styles';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
+import Chip from '@mui/material/Chip';
+import HomeIcon from '@mui/icons-material/Home';
 
 import { login } from '../redux/apiCalls.js';
 import './login.css';
@@ -22,8 +27,35 @@ const LoginDialog = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("");
     const dispatch = useDispatch();
-    // const navigate = useNavigate();
     const { isFetching, error, currentUser } = useSelector((state) => state.user);
+
+
+    const StyledBreadcrumb = styled(Chip)(({ theme }) => {
+        const backgroundColor =
+            theme.palette.mode === 'light'
+                ? theme.palette.grey[100]
+                : theme.palette.grey[800];
+        return {
+            backgroundColor,
+            height: theme.spacing(4),
+            width: theme.spacing(15),
+            color: theme.palette.text.primary,
+            fontWeight: theme.typography.fontWeightRegular,
+            '&:hover, &:focus': {
+                backgroundColor: emphasize(backgroundColor, 0.06),
+            },
+            '&:active': {
+                boxShadow: theme.shadows[1],
+                backgroundColor: emphasize(backgroundColor, 0.12),
+            },
+        };
+    });
+
+    function handleClick(event) {
+        event.preventDefault();
+        console.info('You clicked a breadcrumb.');
+    }
+
 
     const userSubmit = (e) => {
         e.preventDefault()
@@ -47,21 +79,23 @@ const LoginDialog = () => {
                     : 'Login'} </Link>
             <Dialog open={open} onClose={closeDialog} >
                 <div className='dialog-wrapper'>
-                    <DialogTitle>{currentUser 
-                    ? <div className='hello-user'>Hello {currentUser.username}!</div>
-                    : 'LOGIN'}</DialogTitle>
+                    <DialogTitle>{currentUser
+                        ? <div className='hello-user'>Hello {currentUser.username}!</div>
+                        : 'LOGIN'}</DialogTitle>
                     <DialogContent>
                         {currentUser
                             ?
                             <div>
                                 <DialogContentText>
-                                    Welcome to our website, we are glad you are part of our cassette store family. If you want to make a purchase, please go to our new products section.
+                                    Welcome to our website. If you want to make a purchase, please go to our products section where you will find the newest arrivals.
                                 </DialogContentText>
-                                <div className='login-success-msg'>
-                                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                {/* <div className='login-success-msg'> */}
+                                <div>
+                                    {/* <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                         <Box sx={{ m: 1, position: 'relative' }}>
                                             <Fab aria-label="save" color="secondary">
-                                                <CheckIcon />
+            
+                                                <Person />
                                             </Fab>
                                         </Box>
                                         <Box sx={{ m: 1, position: 'relative' }}>
@@ -70,14 +104,72 @@ const LoginDialog = () => {
                                             </Button>
                                         </Box>
                                     </Box>
+
+                                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                        <Box sx={{ m: 1, position: 'relative' }}>
+                                            <Fab aria-label="save" color="primary">
+                                 
+                                                <ShoppingCart/>
+                                            </Fab>
+                                        </Box>
+                                        <Box sx={{ m: 1, position: 'relative' }}>
+                                            <Button variant="contained" color="primary">
+                                                <Link to='/cart' className='link'>TO CART</Link>
+                                            </Button>
+                                        </Box>
+                                    </Box>
+
+                                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                        <Box sx={{ m: 1, position: 'relative' }}>
+                                            <Fab aria-label="save" color="warning">
+                                  
+                                                <Home />
+                                            </Fab>
+                                        </Box>
+                                        <Box sx={{ m: 1, position: 'relative' }}>
+                                            <Button variant="contained" color="warning">
+                                                <Link to='/' className='link'>TO HOME PAGE</Link>
+                                            </Button>
+                                        </Box>
+                                    </Box> */}
+
+
+                                    <div role="presentation" onClick={handleClick} className='presentation'>
+                                        <Breadcrumbs aria-label="breadcrumb">
+                                            <StyledBreadcrumb
+                                            className='breadcrumb'
+                                                component="a"
+                                                href="#"
+                                                label="Account"
+                                                icon={<Person fontSize="medium" />}
+                                            />
+                                            <StyledBreadcrumb
+                                            className='breadcrumb'
+                                                component="a"
+                                                href="#"
+                                                label="Cart"
+                                                icon={<ShoppingCart fontSize="small" />}
+                                            />
+                                            <StyledBreadcrumb
+                                            className='breadcrumb'
+                                                component="a"
+                                                href="#"
+                                                label="To Home"
+                                                icon={<HomeIcon fontSize="small" />}
+                                            />
+
+                                        </Breadcrumbs>
+                                    </div>
+
                                 </div>
-                                <DialogActions>
+
+                                {/* <DialogActions>
                                     <div className='dialog-actions'>
                                         <Button><Link to='/' className='link'>TO HOME</Link></Button>
                                         <Button><Link to='/cart' className='link'>CART</Link></Button>
                                         <Button><Link to='/allproducts' className='link'>CASSETTES</Link></Button>
                                     </div>
-                                </DialogActions>
+                                </DialogActions> */}
                             </div>
                             :
                             <div>

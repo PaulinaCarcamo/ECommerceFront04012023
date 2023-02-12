@@ -35,6 +35,15 @@
     color: #ffffff;
 }
 
+.presentation {
+    margin: 30px 40px;
+    display: flex;
+}
+
+.breadcrumb {
+    cursor: pointer;
+}
+
 
 
 
