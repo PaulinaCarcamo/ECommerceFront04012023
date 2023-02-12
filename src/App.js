@@ -14,10 +14,10 @@ import Success from './pages/Success.js';
 import './App.css';
 
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
-import Loading from './pages/Loading.js';
+
 
 const App = () => {
-  const user = useSelector((state) => state.user.currentUser)
+  // const user = useSelector((state) => state.user.currentUser)
   return (
     <PayPalScriptProvider options={{ "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID }}>
       <div className='App'>
@@ -37,7 +37,6 @@ const App = () => {
             <Route path='/login' element={<Login />} />
             {/* <Route path='/login' element={user ? <Navigate replace to="/account" /> : <Login />} /> */}
             <Route path='/register' element={<Register />} />
-            <Route path='/loading' element={user ? <Navigate replace to="/account" /> : <Loading />} />
           </Routes>
         </BrowserRouter>
       </div>

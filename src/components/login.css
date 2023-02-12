@@ -2,14 +2,39 @@
     padding: 10px 20px;
 }
 
+.hello-user {
+    text-transform: uppercase;
+}
+
 .dialog-actions Button {
     color: #000000;
     cursor: pointer;
     transition: 0.2s;
-
 }
 
 .dialog-actions Button:hover {
     color: #000000;
     background-color: transparent;
-  }
+}
+
+.username-link {
+    text-decoration: none;
+    color: #800080;
+}
+
+.login-success-msg {
+    padding: 5% 25%;
+}
+
+.login-success-msg Button {
+    color: #ffffff;
+    transition: 0.2s;
+}
+
+.login-success-msg .link {
+    color: #ffffff;
+}
+
+
+
+

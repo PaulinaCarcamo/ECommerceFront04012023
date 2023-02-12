@@ -4,7 +4,7 @@ import { Badge } from '@mui/material';
 
 import { useSelector } from 'react-redux';
 import './navbar.css';
-import RegisterDialog from './Register';
+// import RegisterDialog from './Register';
 import LoginDialog from './Login';
 
 const Navbar = () => {
@@ -38,7 +38,8 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <div className='nav-right'>
-                    <RegisterDialog />
+                    {/* <RegisterDialog /> */}
+                    <Link to='/register' className='link'> REGISTER</Link>
                     <LoginDialog />
                     <Link to='/cart' className='link'>
                         <Badge badgeContent={totalProducts()} color="secondary">
