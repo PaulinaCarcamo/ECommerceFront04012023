@@ -15,6 +15,7 @@ import Footer from '../components/Footer.js';
 import './register.css';
 import { useSelector } from 'react-redux';
 import LoginDialog from '../components/Login.js';
+import { Check, VpnKey } from '@mui/icons-material';
 
 //THIS PAGE SHOWS FORM TO REGISTER NEW USER'S INFORMATION.
 
@@ -59,32 +60,35 @@ export default function Register() {
       <Ads />
       <Navbar />
       <div className="reg-container">
-        <button variant="outlined" onClick={openDialog}>
-          CLICK TO REGISTER
-        </button>
+        {register
+          ? <div><button onClick={openDialog}>CLICK TO LOGIN</button></div>
+          : <div><button onClick={openDialog}>CLICK TO REGISTER</button></div>
+        }
 
         <Dialog open={open} onClose={closeDialog}>
           <div className='dialog-wrapper'>
             {register
-              ? <div><DialogTitle>THANKS FOR YOUR REGISTRATION</DialogTitle></div>
-              : <div><DialogTitle>CREATE YOUR ACCOUNT</DialogTitle></div>}
-
-            <DialogContent>
-              {register
-                ?
-                <div>
+              ?
+              <div>
+                <DialogTitle>Thanks for joining us! <Check /></DialogTitle>
+                <DialogContent>
                   <DialogContentText>
                     We are glad to have you here. Please login to access to your account.
                   </DialogContentText>
                   <div className='dialog-actions'>
                     <DialogActions>
-                      <Button><Link to='/' className='link'>TO HOME</Link></Button>
-                      <Button><LoginDialog /></Button>
+                      <VpnKey />
+                      <Link className='link'>
+                        <Button> <LoginDialog /> </Button>
+                      </Link>
                     </DialogActions>
                   </div>
-                </div>
-                :
-                <div>
+                </DialogContent>
+              </div>
+              :
+              <div>
+                <DialogTitle>CREATE YOUR ACCOUNT</DialogTitle>
+                <DialogContent>
                   <DialogContentText>
                     To register to this website, please enter your name and email address here. We
                     will send updates of our products occasionally.
@@ -137,9 +141,9 @@ export default function Register() {
                       >REGISTER</Button>
                     </DialogActions>
                   </div>
-                </div>
-              }
-            </DialogContent>
+                </DialogContent>
+              </div>
+            }
           </div>
         </Dialog>
       </div>

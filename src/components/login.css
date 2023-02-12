@@ -4,6 +4,7 @@
 
 .hello-user {
     text-transform: uppercase;
+    /* display: flex; */
 }
 
 .dialog-actions Button {
@@ -36,8 +37,8 @@
 }
 
 .presentation {
-    margin: 30px 40px;
     display: flex;
+    margin: 30px 0;
 }
 
 .breadcrumb {

@@ -1,61 +1,29 @@
 import Button from '@mui/material/Button';
-import { AccountCircle, Error, Home, Person, ShoppingCart } from '@mui/icons-material';
+import { Home, Person, ShoppingCart, Verified } from '@mui/icons-material';
 import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import Box from '@mui/material/Box';
-import Fab from '@mui/material/Fab';
-import CheckIcon from '@mui/icons-material/Check';
+import List from '@mui/material/List';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
-import { emphasize, styled } from '@mui/material/styles';
-import Breadcrumbs from '@mui/material/Breadcrumbs';
-import Chip from '@mui/material/Chip';
-import HomeIcon from '@mui/icons-material/Home';
 
 import { login } from '../redux/apiCalls.js';
 import './login.css';
 
 const LoginDialog = () => {
-    const [open, setOpen] = useState(false);
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("");
+    const [open, setOpen] = useState(false);
     const dispatch = useDispatch();
     const { isFetching, error, currentUser } = useSelector((state) => state.user);
-
-
-    const StyledBreadcrumb = styled(Chip)(({ theme }) => {
-        const backgroundColor =
-            theme.palette.mode === 'light'
-                ? theme.palette.grey[100]
-                : theme.palette.grey[800];
-        return {
-            backgroundColor,
-            height: theme.spacing(4),
-            width: theme.spacing(15),
-            color: theme.palette.text.primary,
-            fontWeight: theme.typography.fontWeightRegular,
-            '&:hover, &:focus': {
-                backgroundColor: emphasize(backgroundColor, 0.06),
-            },
-            '&:active': {
-                boxShadow: theme.shadows[1],
-                backgroundColor: emphasize(backgroundColor, 0.12),
-            },
-        };
-    });
-
-    function handleClick(event) {
-        event.preventDefault();
-        console.info('You clicked a breadcrumb.');
-    }
-
 
     const userSubmit = (e) => {
         e.preventDefault()
@@ -74,14 +42,16 @@ const LoginDialog = () => {
         <div>
             <Link className='link' onClick={openDialog}>
                 {currentUser
-                    // ? <Link to='/account' className='username-link'>{currentUser.username}</Link>
                     ? `${currentUser.username}`
-                    : 'Login'} </Link>
+                    : 'LOGIN'} </Link>
             <Dialog open={open} onClose={closeDialog} >
                 <div className='dialog-wrapper'>
                     <DialogTitle>{currentUser
-                        ? <div className='hello-user'>Hello {currentUser.username}!</div>
-                        : 'LOGIN'}</DialogTitle>
+                        ? <div className='hello-user'>Hello {currentUser.username}!
+                            <Verified color='success' />
+                        </div>
+                        : 'LOGIN'}
+                    </DialogTitle>
                     <DialogContent>
                         {currentUser
                             ?
@@ -89,87 +59,40 @@ const LoginDialog = () => {
                                 <DialogContentText>
                                     Welcome to our website. If you want to make a purchase, please go to our products section where you will find the newest arrivals.
                                 </DialogContentText>
-                                {/* <div className='login-success-msg'> */}
-                                <div>
-                                    {/* <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                        <Box sx={{ m: 1, position: 'relative' }}>
-                                            <Fab aria-label="save" color="secondary">
-            
-                                                <Person />
-                                            </Fab>
-                                        </Box>
-                                        <Box sx={{ m: 1, position: 'relative' }}>
-                                            <Button variant="contained" color="secondary">
-                                                <Link to='/account' className='link'>TO ACCOUNT</Link>
-                                            </Button>
-                                        </Box>
-                                    </Box>
+                                <DialogActions>
+                                    <List
+                                        sx={{ width: '100%', bgcolor: 'background.paper' }}
+                                        component="nav"
+                                        aria-labelledby="nested-list"
+                                    >
+                                        <Link to='/account' className='link'>
+                                            <ListItemButton>
+                                                <ListItemIcon>
+                                                    <Person />
+                                                </ListItemIcon>
+                                                <ListItemText primary="TO ACCOUNT" />
+                                            </ListItemButton>
+                                        </Link>
 
-                                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                        <Box sx={{ m: 1, position: 'relative' }}>
-                                            <Fab aria-label="save" color="primary">
-                                 
-                                                <ShoppingCart/>
-                                            </Fab>
-                                        </Box>
-                                        <Box sx={{ m: 1, position: 'relative' }}>
-                                            <Button variant="contained" color="primary">
-                                                <Link to='/cart' className='link'>TO CART</Link>
-                                            </Button>
-                                        </Box>
-                                    </Box>
+                                        <Link to='/cart' className='link'>
+                                            <ListItemButton>
+                                                <ListItemIcon>
+                                                    <ShoppingCart />
+                                                </ListItemIcon>
+                                                <ListItemText primary="TO CART" />
+                                            </ListItemButton>
+                                        </Link>
 
-                                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                        <Box sx={{ m: 1, position: 'relative' }}>
-                                            <Fab aria-label="save" color="warning">
-                                  
-                                                <Home />
-                                            </Fab>
-                                        </Box>
-                                        <Box sx={{ m: 1, position: 'relative' }}>
-                                            <Button variant="contained" color="warning">
-                                                <Link to='/' className='link'>TO HOME PAGE</Link>
-                                            </Button>
-                                        </Box>
-                                    </Box> */}
-
-
-                                    <div role="presentation" onClick={handleClick} className='presentation'>
-                                        <Breadcrumbs aria-label="breadcrumb">
-                                            <StyledBreadcrumb
-                                            className='breadcrumb'
-                                                component="a"
-                                                href="#"
-                                                label="Account"
-                                                icon={<Person fontSize="medium" />}
-                                            />
-                                            <StyledBreadcrumb
-                                            className='breadcrumb'
-                                                component="a"
-                                                href="#"
-                                                label="Cart"
-                                                icon={<ShoppingCart fontSize="small" />}
-                                            />
-                                            <StyledBreadcrumb
-                                            className='breadcrumb'
-                                                component="a"
-                                                href="#"
-                                                label="To Home"
-                                                icon={<HomeIcon fontSize="small" />}
-                                            />
-
-                                        </Breadcrumbs>
-                                    </div>
-
-                                </div>
-
-                                {/* <DialogActions>
-                                    <div className='dialog-actions'>
-                                        <Button><Link to='/' className='link'>TO HOME</Link></Button>
-                                        <Button><Link to='/cart' className='link'>CART</Link></Button>
-                                        <Button><Link to='/allproducts' className='link'>CASSETTES</Link></Button>
-                                    </div>
-                                </DialogActions> */}
+                                        <Link to='/' className='link'>
+                                            <ListItemButton>
+                                                <ListItemIcon>
+                                                    <Home />
+                                                </ListItemIcon>
+                                                <ListItemText primary="TO HOME PAGE" />
+                                            </ListItemButton>
+                                        </Link>
+                                    </List>
+                                </DialogActions>
                             </div>
                             :
                             <div>
@@ -207,7 +130,6 @@ const LoginDialog = () => {
                                         <Button onClick={(e) => userSubmit(e)} disabled={isFetching}>LOGIN</Button>
                                         {/* <span>{error && <Error />}</span> */}
                                     </div>
-
                                 </DialogActions>
                             </div>}
                     </DialogContent>

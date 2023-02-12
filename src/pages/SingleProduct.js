@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
@@ -10,7 +10,9 @@ import { publicRequest } from '../requests/requestMethods.js';
 import Navbar from '../components/Navbar.js';
 import Ads from '../components/Ads.js';
 import Footer from '../components/Footer.js';
+import { removeProduct, incrementQuantity, decrementQuantity } from '../redux/cartRedux.js';
 import './singleProduct.css';
+import { AddCircleOutlineRounded, RemoveCircleOutlineRounded } from '@mui/icons-material';
 
 //THIS PAGE SHOWS ONE PRODUCT, ITS INFORMATION AND PRICE. IT ALSO CONTAINS A BUTTON TO ADD PRODUCTS TO CART.
 
@@ -23,7 +25,16 @@ const Product = () => {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
 
-  console.log(setQuantity);
+  // const products = useSelector(state => state.cart.products);
+
+  // const handleQuantity = (type) => {
+  //   if (type === "dec") {
+  //     setQuantity(quantity - 1)
+
+  //   } else {
+  //     setQuantity(quantity + 1)
+  //   }
+  // }
 
   useEffect(() => {
     const getProduct = async () => {
@@ -60,6 +71,19 @@ const Product = () => {
           <div>{product.desc}</div>
           <div>
             <h2>$ {product.price}</h2>
+
+            {/* {products?.map(() => (
+              <div>
+                <div>
+                  <h3 onClick={() => { handleQuantity("dec") }}>
+                    <RemoveCircleOutlineRounded /></h3>
+                  <h3>{quantity}</h3>
+                  <h3 onClick={() => { handleQuantity("inc") }}>
+                    <AddCircleOutlineRounded /></h3>
+                </div>
+              </div>
+            ))
+            } */}
 
             <button onClick={() => {
               openSnackbar();
