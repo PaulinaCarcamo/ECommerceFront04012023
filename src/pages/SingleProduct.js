@@ -25,7 +25,7 @@ const Product = () => {
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
 
-  // const products = useSelector(state => state.cart.products);
+  const products = useSelector(state => state.cart.products);
 
   // const handleQuantity = (type) => {
   //   if (type === "dec") {
@@ -35,6 +35,14 @@ const Product = () => {
   //     setQuantity(quantity + 1)
   //   }
   // }
+
+  const increase = () => {
+    setQuantity(quantity - 1)
+  }
+
+  const decrease = () => {
+    setQuantity(quantity + 1)
+  }
 
   useEffect(() => {
     const getProduct = async () => {
@@ -72,18 +80,18 @@ const Product = () => {
           <div>
             <h2>$ {product.price}</h2>
 
-            {/* {products?.map(() => (
-              <div>
-                <div>
-                  <h3 onClick={() => { handleQuantity("dec") }}>
-                    <RemoveCircleOutlineRounded /></h3>
-                  <h3>{quantity}</h3>
-                  <h3 onClick={() => { handleQuantity("inc") }}>
-                    <AddCircleOutlineRounded /></h3>
-                </div>
-              </div>
-            ))
-            } */}
+
+
+            {/* 
+{products?.map(() => (
+    <div className='bag-del'>
+    <h3 onClick={() => increase(id)}>
+        <RemoveCircleOutlineRounded /></h3>
+    <h3>{quantity}</h3>
+    <h3 onClick={() => decrease(id)}>
+        <AddCircleOutlineRounded /></h3>
+</div>
+))} */}
 
             <button onClick={() => {
               openSnackbar();

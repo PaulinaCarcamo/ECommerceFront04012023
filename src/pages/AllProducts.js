@@ -25,15 +25,30 @@ const AllProducts = () => {
     });
   };
 
+  // const initialState = {
+  //   ...filters === null
+  // };
+
+  // const resetState = () => {
+  //   setFilters(initialState);
+  // };
+
+  const resetFilters = () => {
+    const initialState = {
+      ...filters === null
+    }
+    setFilters(initialState)
+  };
+
   return (
     <div>
       <Navbar />
       <Ads />
       <h1>OUR PRODUCTS</h1>
       <div className='filter-wrapper'>
-        <div>
-          <div>Filter By Brand and Type</div>
-          <div className='brand-type'>
+        <div className='all-filters'>
+          <div >
+
             <div>
               <select className='select-options' name='brand' onChange={filterItems}>
                 <option disabled selected>Brand</option>
@@ -43,24 +58,30 @@ const AllProducts = () => {
                 <option>Maxell</option>
               </select>
             </div>
-            <div>
-              <select className='select-options' name='categories' onChange={filterItems}>
-                <option disabled selected>Type</option>
-                <option>typei</option>
-                <option>typeii</option>
-                <option>typeiv</option>
-              </select>
-            </div>
+          </div>
+
+          <div>
+            <select className='select-options' name='categories' onChange={filterItems}>
+              <option disabled selected>Type</option>
+              <option>typei</option>
+              <option>typeii</option>
+              <option>typeiv</option>
+            </select>
+          </div>
+
+          <div>
+            <select className='select-options' onChange={(e) => setSort(e.target.value)}>
+              <option disabled selected>Price</option>
+              <option value='asc'>Low</option>
+              <option value='desc'>High</option>
+            </select>
           </div>
         </div>
+
         <div>
-          <div>Sort By Price</div>
-          <select className='select-options' onChange={(e) => setSort(e.target.value)}>
-            <option disabled selected>Price</option>
-            <option value='asc'>Low</option>
-            <option value='desc'>High</option>
-          </select>
+          <button onClick={resetFilters} > Reset Filters </button>
         </div>
+
       </div>
       <Popular prods={prods} filters={filters} sort={sort} />
       <Footer />
