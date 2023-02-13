@@ -63,9 +63,9 @@ const AllProducts = () => {
           <div>
             <select className='select-options' name='categories' onChange={filterItems}>
               <option disabled selected>Type</option>
-              <option>typei</option>
-              <option>typeii</option>
-              <option>typeiv</option>
+              <option>Ferric</option>
+              <option>Chrome</option>
+              <option>Metal</option>
             </select>
           </div>
 

@@ -6,19 +6,21 @@ export const categories = [
     {
         id: 1,
         img: category1,
-        title: "TYPE I",
-        categ: "typei"
+        // img: 'https://i.pinimg.com/originals/29/58/0d/29580dbb358e876c2da65b28e0e004a6.jpg',
+        title: "FERRIC",
+        categ: "Ferric"
     },
     {
         id: 2,
         img: category2,
-        title: "TYPE II",
-        categ: "typeii"
+        title: "CHROME",
+        categ: "Chrome"
     },
     {
         id: 3,
         img: category3,
-        title: "TYPE IV",
-        categ: "typeiv"
+        // img: 'https://media.idownloadblog.com/wp-content/uploads/2017/07/triangle-art-abstract-bw-white-pattern-iphone-6-plus.jpg',
+        title: "METAL",
+        categ: "Metal"
     },
 ]
