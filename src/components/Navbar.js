@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom';
 import { AddReaction, Radio, ShoppingCart } from '@mui/icons-material';
 import { Badge } from '@mui/material';
-
 import { useSelector } from 'react-redux';
+
 import './navbar.css';
-// import RegisterDialog from './Register';
 import LoginDialog from './Login';
 
 const Navbar = () => {
@@ -38,7 +37,6 @@ const Navbar = () => {
                     </Link>
                 </div>
                 <div className='nav-right'>
-                    {/* <RegisterDialog /> */}
                     <Link to='/register' className='link'> REGISTER</Link>
                     <LoginDialog />
                     <Link to='/cart' className='link'>

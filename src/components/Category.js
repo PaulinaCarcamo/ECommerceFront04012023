@@ -8,7 +8,7 @@ const CategoryItem = ({ item }) => {
             <div className='categ-element'>
                 <h2>{item.title}</h2>
                 <Link to={`/category/${item.categ}`}>
-                    <button className='categ-btn'>SHOP NOW</button>
+                    <button className='black-btn'>SHOP NOW</button>
                 </Link>
             </div>
         </div>

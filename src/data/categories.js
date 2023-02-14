@@ -1,25 +1,26 @@
-import category1 from '../images/category1.jpg'
-import category2 from '../images/category2.jpg'
-import category3 from '../images/category3.jpg'
+// import ferric from '../images/ferr-categ.jpg'
+// import chrome from '../images/chr-categ.jpg'
+// import metal from '../images/met-categ.jpg'
 
 export const categories = [
     {
         id: 1,
-        img: category1,
-        // img: 'https://i.pinimg.com/originals/29/58/0d/29580dbb358e876c2da65b28e0e004a6.jpg',
+        // img: ferric,
+        img: 'https://res.cloudinary.com/fictive-kin/image/upload/v1/verygoods/prod/7bbf1edc4c9d705a47b5367541e3b2556cce0a0d',
         title: "FERRIC",
         categ: "Ferric"
     },
     {
         id: 2,
-        img: category2,
+        // img: chrome,
+        img: 'https://i.localised.com/img/uo/product/33efdc30-f244-4244-b02d-bab28549a23a.jpg',
         title: "CHROME",
         categ: "Chrome"
     },
     {
         id: 3,
-        img: category3,
-        // img: 'https://media.idownloadblog.com/wp-content/uploads/2017/07/triangle-art-abstract-bw-white-pattern-iphone-6-plus.jpg',
+        // img: metal,
+        img: 'https://i.pinimg.com/564x/ee/86/ae/ee86aef689b8789da61168169247773d.jpg',
         title: "METAL",
         categ: "Metal"
     },

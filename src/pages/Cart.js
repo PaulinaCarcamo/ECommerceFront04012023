@@ -3,13 +3,14 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
-import { removeProduct, incrementQuantity, decrementQuantity } from '../redux/cartRedux.js';
+import { removeProduct, incrementQuantity, decrementQuantity, resetCart } from '../redux/cartRedux.js';
 import PaypalCheckout from '../components/PaypalCheckout.js'
 import Navbar from '../components/Navbar.js';
 import Ads from '../components/Ads.js';
 import Footer from '../components/Footer.js';
 import './cart.css';
 import emptycart from '../images/empty-cart.png'
+import { useState } from 'react';
 
 //SHOPPING CART SHOWS PRODUCTS SELECTED AND SUMMARY OF THE ORDER MADE BY USER.
 
@@ -17,11 +18,14 @@ const Cart = () => {
     const products = useSelector(state => state.cart.products);
     const dispatch = useDispatch();
 
+
     const totalPrice = () => {
         let total = 0;
         products.forEach((item) => (total += item.quantity * item.price));
         return total;
     };
+
+
 
     return (
         <div>
@@ -32,7 +36,7 @@ const Cart = () => {
                 <div className='empty-cart'>
                     <img src={emptycart}></img>
                     <div>Your cart is empty, please go to our products section and
-                        <p><Link to='/allproducts'>GO SHOPPING!</Link></p>
+                        <p><Link to='/allproducts' className='link'>GO SHOPPING!</Link></p>
                     </div>
                 </div>
                 :
@@ -42,6 +46,7 @@ const Cart = () => {
                         <div className='cart-links'>
                             <Link to='/allproducts' className='link'>KEEP SHOPPING</Link>
                             <Link to='/' className='link'>TO HOME PAGE</Link>
+                            <Link onClick={() => dispatch(resetCart())}>RESET CART</Link>
                         </div>
                         <div className='cart-sections'>
                             <div className='cart-elements'>
@@ -60,16 +65,17 @@ const Cart = () => {
 
                                         <div className='bag-del'>
                                             <h3 onClick={() => dispatch(decrementQuantity(item.id))}>
-                                                <RemoveCircleOutlineRounded /></h3>
+                                                <RemoveCircleOutlineRounded className='cart-icons' /></h3>
                                             <h3>{item.quantity}</h3>
                                             <h3 onClick={() => dispatch(incrementQuantity(item.id))}>
-                                                <AddCircleOutlineRounded /></h3>
-                                            <p className='del'>
-                                                <DeleteForever onClick={() =>
+                                                <AddCircleOutlineRounded className='cart-icons' /></h3>
+                                            <p className='cart-icons'>
+                                                <DeleteForever className='icon' onClick={() =>
                                                     dispatch(removeProduct(item.id))}>
                                                 </DeleteForever>
                                             </p>
                                         </div>
+
                                     </div>
                                 ))}
                             </div>

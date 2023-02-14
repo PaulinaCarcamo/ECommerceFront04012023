@@ -29,12 +29,6 @@
     font-size: 60px;
 }
 
-.categ-btn {
-    margin-top: 0;
-    background-color: #ffffff;
-    opacity: 95%;
-}
-
 @media only screen and (max-width: 1024px) {
     .categ-wrapper {
         display: flex;
@@ -53,9 +47,5 @@
     .categ-element h2 {
         font-size: 30px;
         margin: 0px;
-    }
-
-    .categ-btn {
-        font-size: 10px;
     }
 }

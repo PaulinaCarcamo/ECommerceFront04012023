@@ -9,12 +9,12 @@
     flex: 1;
 }
 
-.footer-info {
+.footer-desc {
     margin: 20px 50px 20px 0px;
     text-align: justify;
 }
 
-.social-networks {
+.social-ntwk {
     display: flex;
     gap: 10px;
 }
@@ -37,6 +37,13 @@
     flex: 1;
 }
 
+.contact-info {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .payment {
     height: 50px;
 }
@@ -49,7 +56,7 @@
         font-size: 12px;
     }
 
-    .footer-info {
+    .footer-desc {
         margin: 15px 0;
     }
 

@@ -4,7 +4,9 @@
 
 .hello-user {
     text-transform: uppercase;
-    /* display: flex; */
+    display: flex;
+    align-content: center;
+    gap: 10px;
 }
 
 .dialog-actions Button {
@@ -18,12 +20,7 @@
     background-color: transparent;
 }
 
-.username-link {
-    text-decoration: none;
-    color: #800080;
-}
-
-.login-success-msg {
+/* .login-success-msg {
     padding: 5% 25%;
 }
 
@@ -34,17 +31,5 @@
 
 .login-success-msg .link {
     color: #ffffff;
-}
-
-.presentation {
-    display: flex;
-    margin: 30px 0;
-}
-
-.breadcrumb {
-    cursor: pointer;
-}
-
-
-
+} */
 
