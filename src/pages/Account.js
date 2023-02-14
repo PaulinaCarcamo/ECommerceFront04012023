@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, redirect, useNavigate } from 'react-router-dom';
 import { HomeOutlined, ShoppingBagOutlined, ShoppingCartOutlined, VpnKey } from '@mui/icons-material';
 
 import Ads from '../components/Ads.js';
@@ -8,6 +8,7 @@ import Footer from '../components/Footer.js';
 import './account.css';
 import { logoutUser } from '../redux/userRedux.js';
 import Home from './Home.js';
+import { useEffect, useState } from 'react';
 
 //ACCOUNT SHOWS USER INFORMATION AFTER REGISTRATION
 
@@ -19,19 +20,20 @@ const Profile = () => {
 
     const logout = () => {
         dispatch(logoutUser())
-        .then(
+        .then (
             navigate('/', {replace: true})
         )
     }
 
     return (
         <div>
+
             <div>
                 <div>
                     <Ads />
                     <Navbar />
                     <div className='acct-wrapper'>
-                        <h1>WELCOME 
+                        <h1>WELCOME
                             {user.username}
                         </h1>
                         <div className='profile'>
@@ -58,13 +60,24 @@ const Profile = () => {
                                             <ShoppingCartOutlined />
                                             CHECK OUT CART
                                         </Link>
+
                                         <Link className='txt-flex'
+                                            onClick={() => {
+                                                logout();
+
+                                            }}
+                                        >
+                                            <VpnKey />
+                                            LOG OUT
+                                        </Link>
+
+                                        {/* <Link className='txt-flex'
                                             onClick={() => {
                                                 logout();
                                             }} >
                                             <VpnKey />
                                             LOG OUT
-                                        </Link>
+                                        </Link> */}
                                     </div>
                                 </div>
                             </div>
