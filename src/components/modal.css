@@ -1,0 +1,28 @@
+.box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: #fff;
+    /* border-radius: 5px; */
+    /* box-shadow: ; */
+    border: 2px solid #000;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.box Button {
+    color: #000000;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.box Button:hover {
+    color: #000000;
+    background-color: transparent;
+}

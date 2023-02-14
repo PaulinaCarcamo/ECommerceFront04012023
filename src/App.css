@@ -32,16 +32,15 @@ button {
   transition: 0.2s;
 }
 
+button:hover {
+  transform: scale(1.2);
+  opacity: 80%;
+}
+
 .black-btn {
     color: white;
     border: 2px solid white;
     background-color: #00000091;
-}
-
-
-button:hover {
-  transform: scale(1.2);
-  opacity: 80%;
 }
 
 icon {
