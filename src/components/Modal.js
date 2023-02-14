@@ -36,9 +36,9 @@ export default function ConfirmationModal() {
           </Typography> */}
           </div>
           <div>
-            <Button onClick={() => dispatch(resetCart())}>YES <Check /></Button>
+            <Button onClick={() => dispatch(resetCart())}>YES</Button>
             {/* <Link onClick={() => dispatch(resetCart())}>RESET CART</Link> */}
-            <Button onClick={() => { handleClose() }}>NO <Clear /></Button>
+            <Button onClick={() => { handleClose() }}>NO</Button>
           </div>
         </Box>
       </Modal>

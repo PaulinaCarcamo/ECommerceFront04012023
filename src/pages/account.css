@@ -19,7 +19,7 @@
     border-right: 2px solid #000000;
     background: linear-gradient(#ffffff49,
             #ffffff93),
-        url("../images/bwtape.jpg") center;
+        url("https://www.headlessduplicatedtapes.com/images/cassettes/new_Z_b_matne%CC%8C%20bi%CC%81la%20na%20bi%CC%81le%CC%81_1.jpg") center;
     background-size: cover;
 }
 
@@ -51,6 +51,10 @@
 
 .acct-left .acct-elements {
     text-align: justify;
+}
+
+.Actions-links .txt-flex {
+    text-decoration: none;
 }
 
 @media only screen and (max-width: 1024px) {

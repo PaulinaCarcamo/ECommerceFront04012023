@@ -1,6 +1,6 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-// import { useSelector } from 'react-redux';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
+// import { useSelector } from 'react-redux';
 
 import Home from './pages/Home.js';
 import AllProducts from './pages/AllProducts.js';

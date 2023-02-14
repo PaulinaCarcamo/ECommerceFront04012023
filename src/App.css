@@ -24,7 +24,6 @@ h2 {
 }
 
 button {
-  /* margin-top: 20px; */
   padding: 10px;
   font-size: 20px;
   background-color: transparent;
@@ -51,6 +50,7 @@ icon {
   display: flex;
   align-content: center;
   gap: 10px;
+  color: #000;
 }
 
 ul {
