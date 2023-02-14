@@ -11,6 +11,7 @@ import Footer from '../components/Footer.js';
 import './cart.css';
 import emptycart from '../images/empty-cart.png'
 import { useState } from 'react';
+import ConfirmationModal from '../components/Modal.js';
 
 //SHOPPING CART SHOWS PRODUCTS SELECTED AND SUMMARY OF THE ORDER MADE BY USER.
 
@@ -24,8 +25,6 @@ const Cart = () => {
         products.forEach((item) => (total += item.quantity * item.price));
         return total;
     };
-
-
 
     return (
         <div>
@@ -46,7 +45,8 @@ const Cart = () => {
                         <div className='cart-links'>
                             <Link to='/allproducts' className='link'>KEEP SHOPPING</Link>
                             <Link to='/' className='link'>TO HOME PAGE</Link>
-                            <Link onClick={() => dispatch(resetCart())}>RESET CART</Link>
+                            {/* <Link onClick={() => dispatch(resetCart())}>RESET CART</Link> */}
+                            <ConfirmationModal />
                         </div>
                         <div className='cart-sections'>
                             <div className='cart-elements'>

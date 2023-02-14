@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Snackbar from '@mui/material/Snackbar';
 import IconButton from '@mui/material/IconButton';
@@ -67,8 +67,11 @@ const Product = () => {
     <div>
       <Navbar />
       <Ads />
+
       <div className='product'>
+
         <h2 className='hidden-title'>{product.title}</h2>
+
         <h2 className='hidden-price'>$ {product.price}</h2>
         <div className='img-wrapper'>
           <img className='product-img' src={product.img} alt='img'>
@@ -136,7 +139,14 @@ const Product = () => {
               }
             />
           </div>
+
+          <button>
+            <Link to='/allproducts' className='link'>KEEP SHOPPING</Link>
+          </button>
+ 
+
         </div>
+
       </div>
       <Footer />
     </div>
