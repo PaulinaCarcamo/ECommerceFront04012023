@@ -86,7 +86,6 @@
         object-fit: cover;
         object-position: 10% 40%;
         border: none;
-        border-top: 1.5px solid #000;
         border-bottom: 1.5px solid #000;
     }
 

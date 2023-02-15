@@ -4,6 +4,7 @@
     justify-content: space-around;
     margin: 40px;
     gap: 30px;
+    margin-bottom: 30px;
 }
 
 @media only screen and (max-width: 1024px) {
