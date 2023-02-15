@@ -21,24 +21,24 @@
 }
 
 .dialog-actions Button {
-    color: #000000;
+    color: #000;
     cursor: pointer;
     transition: 0.2s;
 }
 
 .dialog-actions Button:hover {
-    color: #000000;
+    color: #000;
     background-color: transparent;
 }
 
 .success-txt {
-    color: green;
+    color: #008000;
     font-weight: bold;
     text-align: right;
 }
 
 .failed-txt {
-    color: red;
+    color: #ff0000;
     text-align: right;
 }
 

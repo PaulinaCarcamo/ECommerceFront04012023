@@ -16,7 +16,7 @@ const PaypalCheckout = (props) => {
     }
 
     if (paidFor) {
-        navigate("/Success", { replace: true })
+        navigate("/success", { replace: true })
     }
 
     if (error)

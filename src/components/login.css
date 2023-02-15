@@ -10,13 +10,13 @@
 }
 
 .dialog-actions Button {
-    color: #000000;
+    color: #000;
     cursor: pointer;
     transition: 0.2s;
 }
 
 .dialog-actions Button:hover {
-    color: #000000;
+    color: #000;
     background-color: transparent;
 }
 

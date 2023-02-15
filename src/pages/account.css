@@ -37,6 +37,17 @@
     padding-bottom: 20px;
 }
 
+.profile Button {
+    color: #000;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.profile Button:hover {
+    color: #800080;
+    background-color: transparent;
+}
+
 @media only screen and (max-width: 1024px) {
     .acct {
         flex-direction: column;

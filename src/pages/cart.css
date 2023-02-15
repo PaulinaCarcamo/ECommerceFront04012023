@@ -94,6 +94,15 @@
 }
 
 @media only screen and (max-width: 1024px) {
+    .empty-cart {
+        margin: 30px 0;
+        height: 70vw;
+    }
+        
+    .empty-cart img {
+        height: 40vw;
+    }
+   
     .cart-wrapper {
         padding: 0;
     }
@@ -145,8 +154,8 @@
 
     .order {
         padding-bottom: 0;
-        border-top: 1.5px solid #000000;
-        border-bottom: 1.5px solid #000000;
+        border-top: 1.5px solid #000;
+        border-bottom: 1.5px solid #000;
     }
 
     .cart-icons {

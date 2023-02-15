@@ -1,7 +1,7 @@
 .categories {
     display: flex;
-    border-top: 2px solid #000000;
-    border-bottom: 2px solid #000000;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
     margin-bottom: 35px;
     height: 90vh;
 }
@@ -11,7 +11,7 @@
         flex-direction: column;
         margin-bottom: 0;
         height: 100%;
-        border-top: 1.5px solid #000000;
+        border-top: 1.5px solid #000;
         border-bottom: none;
     }
 }
