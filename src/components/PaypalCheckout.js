@@ -23,7 +23,7 @@ const PaypalCheckout = (props) => {
         alert(error)
 
     return (
-        <PayPalScriptProvider options={{ "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID }}>
+        <PayPalScriptProvider options={{ "client-id": 'Aa7XBjPY3TRPCsKfu_Wzam9g06BfA2IfqR6WtAtvXfHtgyMvA-WDyzzzCqqXpplGs-JHV6dq8kegaq9J' }}>
             <PayPalButtons
                 createOrder={(data, actions) => {
                     return actions.order.create({
