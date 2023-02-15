@@ -11,7 +11,7 @@ const Products = ({ categ, filters, sort }) => {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get(`http://another-testing.vercel.app/api/products?category=${categ}`);
+        const res = await axios.get(`https://another-testing.vercel.app/api/products?category=${categ}`);
         setProducts(res.data);
       } catch (err) { }
     };

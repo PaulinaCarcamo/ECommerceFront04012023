@@ -34,7 +34,7 @@ export default function Register() {
 
     const configuration = {
       method: "post",
-      url: "http://another-testing.vercel.app/api/auth/register",
+      url: "https://another-testing.vercel.app/api/auth/register",
       data: {
         username,
         email,
