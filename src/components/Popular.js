@@ -13,7 +13,7 @@ const Popular = ({ prods, filters, sort }) => {
     useEffect(() => {
         const getProducts = async () => {
             try {
-                const res = await axios.get("http://another-testing.vercel.app/api/products");
+                const res = await axios.get("https://another-testing.vercel.app/api/products");
                 setProducts(res.data);
             } catch (err) { }
         };
