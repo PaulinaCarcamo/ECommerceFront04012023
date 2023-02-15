@@ -1,6 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { PayPalScriptProvider } from '@paypal/react-paypal-js';
+// import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 import Home from './pages/Home.js';
 import AllProducts from './pages/AllProducts.js';
@@ -15,7 +15,7 @@ import './App.css';
 const App = () => {
   const user = useSelector((state) => state.user.currentUser)
   return (
-    <PayPalScriptProvider options={{ "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID }}>
+    // <PayPalScriptProvider options={{ "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID }}>
       <div className='App'>
         <BrowserRouter>
           <Routes>
@@ -30,7 +30,7 @@ const App = () => {
           </Routes>
         </BrowserRouter>
       </div>
-    </PayPalScriptProvider>
+    // </PayPalScriptProvider>
   )
 };
 
