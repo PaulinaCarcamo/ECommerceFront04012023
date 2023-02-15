@@ -1,8 +1,8 @@
 import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js';
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import './paypalCheckout.css'
+import './paypalCheckout.css';
 
 const PaypalCheckout = (props) => {
     const { product } = props
@@ -36,14 +36,12 @@ const PaypalCheckout = (props) => {
                         ]
                     })
                 }}
-
                 onApprove={async (data, actions) => {
                     const order = await actions.order.capture()
                     console.log("order", order);
 
                     handleApprove(data.orderID)
                 }}
-
                 onError={(err) => {
                     setError(err)
                     console.log("Paypal checkout onError", err);
