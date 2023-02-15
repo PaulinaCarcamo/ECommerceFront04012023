@@ -12,21 +12,10 @@ import './success.css'
 
 //SUCCESS PAGE IS SHOWN AFTER A PURCHASE.
 
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-};
-
 const Success = () => {
 
     const rootRef = React.useRef(null);
+
     return (
         <div>
             <Ads />
@@ -90,14 +79,15 @@ const Success = () => {
                                     </Typography>
                                 </div>
                                 <div className='actions-links'>
+                                <Link to='/' className='txt-flex'>
+                                        <HomeOutlined />
+                                        TO HOME PAGE
+                                    </Link>
                                     <Link to='/allproducts' className='txt-flex'>
                                         <ShoppingBagOutlined />
                                         KEEP SHOPPING
                                     </Link>
-                                    <Link to='/' className='txt-flex'>
-                                        <HomeOutlined />
-                                        TO HOME PAGE
-                                    </Link>
+
                                     <Link to='/cart' className='txt-flex'>
                                         <ShoppingCartOutlined />
                                         CHECK OUT CART
