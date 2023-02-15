@@ -118,6 +118,7 @@ export default function Register() {
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={currentUser}
                   />
+
                   <TextField
                     required
                     margin="dense"
@@ -130,6 +131,11 @@ export default function Register() {
                     onChange={(e) => setPassword(e.target.value)}
                     disabled={currentUser}
                   />
+
+                  {password.length > 6
+                    ? <span><i>Password length is OK</i></span>
+                    : <span><i>More than 6 characters required</i></span>}
+
                   <div className='dialog-actions'>
                     <DialogActions>
                       <Button onClick={closeDialog}>Cancel</Button>

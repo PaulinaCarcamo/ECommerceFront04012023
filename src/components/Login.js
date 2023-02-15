@@ -124,6 +124,11 @@ const LoginDialog = () => {
                                     disabled={currentUser}
                                 />
 
+                                {email && password
+                                    ? <span><i>Click on button to login</i></span>
+                                    : <span><i>Should provide email and password</i></span>
+                                }
+
                                 <DialogActions>
                                     <div className='dialog-actions'>
                                         <Button onClick={closeDialog}>CANCEL</Button>
