@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Ads from '../components/Ads.js'
 import Navbar from '../components/Navbar.js'
 import Slider from '../components/Slider.js'

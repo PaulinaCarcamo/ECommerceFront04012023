@@ -4,9 +4,8 @@ import { useState } from 'react';
 import Navbar from '../components/Navbar.js';
 import Ads from '../components/Ads.js';
 import Footer from '../components/Footer.js';
-import Popular from '../components/Popular.js'
-import './allProducts.css'
-import { Backspace, BackspaceOutlined, Clear } from '@mui/icons-material';
+import Popular from '../components/Popular.js';
+import './allProducts.css';
 
 //THIS PAGE SHOWS ALL PRODUCTS AND CATEGORIES. PRODUCTS CAN BE FILTERED OR SORTED BY BRAND AND PRICE.
 
@@ -25,14 +24,6 @@ const AllProducts = () => {
       [e.target.name]: value,
     });
   };
-
-  // const initialState = {
-  //   ...filters === null
-  // };
-
-  // const resetState = () => {
-  //   setFilters(initialState);
-  // };
 
   const resetFilters = () => {
     const initialState = {

@@ -79,7 +79,7 @@ const Success = () => {
                                     </Typography>
                                 </div>
                                 <div className='actions-links'>
-                                <Link to='/' className='txt-flex'>
+                                    <Link to='/' className='txt-flex'>
                                         <HomeOutlined />
                                         TO HOME PAGE
                                     </Link>

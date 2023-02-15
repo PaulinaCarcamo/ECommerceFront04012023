@@ -10,9 +10,8 @@ import { publicRequest } from '../requests/requestMethods.js';
 import Navbar from '../components/Navbar.js';
 import Ads from '../components/Ads.js';
 import Footer from '../components/Footer.js';
-import { removeProduct, incrementQuantity, decrementQuantity } from '../redux/cartRedux.js';
 import './singleProduct.css';
-import { AddCircleOutlineRounded, HomeOutlined, RemoveCircleOutlineRounded, ShoppingBag, ShoppingBagOutlined, ShoppingCartOutlined } from '@mui/icons-material';
+import { HomeOutlined, ShoppingBagOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 
 const Product = () => {
 
@@ -25,13 +24,13 @@ const Product = () => {
 
     const products = useSelector(state => state.cart.products);
 
-    const increase = () => {
-        setQuantity(quantity - 1)
-    }
+    // const increase = () => {
+    //     setQuantity(quantity - 1)
+    // }
 
-    const decrease = () => {
-        setQuantity(quantity + 1)
-    }
+    // const decrease = () => {
+    //     setQuantity(quantity + 1)
+    // }
 
     useEffect(() => {
         const getProduct = async () => {
@@ -51,7 +50,6 @@ const Product = () => {
         if ("clickaway" === reason) return;
         setOpen(false);
     };
-
 
     return (
         <div>

@@ -1,16 +1,15 @@
-import { DeleteForever, RemoveCircleOutlineRounded, AddCircleOutlineRounded, DeleteOutline, DeleteOutlined, Delete, DeleteRounded, DeleteForeverTwoTone, DeleteForeverRounded } from '@mui/icons-material';
+import { DeleteForever, RemoveCircleOutlineRounded, AddCircleOutlineRounded } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
-import { removeProduct, incrementQuantity, decrementQuantity, resetCart } from '../redux/cartRedux.js';
+import { removeProduct, incrementQuantity, decrementQuantity } from '../redux/cartRedux.js';
 import PaypalCheckout from '../components/PaypalCheckout.js'
 import Navbar from '../components/Navbar.js';
 import Ads from '../components/Ads.js';
 import Footer from '../components/Footer.js';
 import './cart.css';
 import emptycart from '../images/empty-cart.png'
-import { useState } from 'react';
 import ConfirmationModal from '../components/Modal.js';
 
 //SHOPPING CART SHOWS PRODUCTS SELECTED AND SUMMARY OF THE ORDER MADE BY USER.
@@ -18,7 +17,6 @@ import ConfirmationModal from '../components/Modal.js';
 const Cart = () => {
     const products = useSelector(state => state.cart.products);
     const dispatch = useDispatch();
-
 
     const totalPrice = () => {
         let total = 0;

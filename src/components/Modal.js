@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 
 import { resetCart } from '../redux/cartRedux.js';
 import './modal.css'
-import { Check, Clear } from '@mui/icons-material';
 
 export default function ConfirmationModal() {
   const [open, setOpen] = React.useState(false);

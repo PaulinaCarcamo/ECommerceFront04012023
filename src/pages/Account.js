@@ -1,8 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, Navigate, redirect, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { HomeOutlined, ShoppingBagOutlined, ShoppingCartOutlined, VpnKey } from '@mui/icons-material';
-
-import * as React from 'react';
+import { Button } from '@mui/material';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
@@ -11,9 +10,6 @@ import Navbar from '../components/Navbar.js';
 import Footer from '../components/Footer.js';
 import './account.css';
 import { logoutUser } from '../redux/userRedux.js';
-import Home from './Home.js';
-import { useEffect, useState } from 'react';
-import { Button } from '@mui/material';
 
 //ACCOUNT SHOWS USER INFORMATION AFTER REGISTRATION
 
