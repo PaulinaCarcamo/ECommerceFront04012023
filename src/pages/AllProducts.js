@@ -6,6 +6,7 @@ import Ads from '../components/Ads.js';
 import Footer from '../components/Footer.js';
 import Popular from '../components/Popular.js'
 import './allProducts.css'
+import { Backspace, BackspaceOutlined, Clear } from '@mui/icons-material';
 
 //THIS PAGE SHOWS ALL PRODUCTS AND CATEGORIES. PRODUCTS CAN BE FILTERED OR SORTED BY BRAND AND PRICE.
 
@@ -47,19 +48,15 @@ const AllProducts = () => {
       <h1>OUR PRODUCTS</h1>
       <div className='filter-wrapper'>
         <div className='all-filters'>
-          <div >
-
-            <div>
-              <select className='select-options' name='brand' onChange={filterItems}>
-                <option disabled selected>Brand</option>
-                <option>Philips</option>
-                <option>TDK</option>
-                <option>Basf</option>
-                <option>Maxell</option>
-              </select>
-            </div>
+          <div>
+            <select className='select-options' name='brand' onChange={filterItems}>
+              <option disabled selected>Brand</option>
+              <option>Philips</option>
+              <option>TDK</option>
+              <option>Basf</option>
+              <option>Maxell</option>
+            </select>
           </div>
-
           <div>
             <select className='select-options' name='categories' onChange={filterItems}>
               <option disabled selected>Type</option>
@@ -68,7 +65,6 @@ const AllProducts = () => {
               <option>Metal</option>
             </select>
           </div>
-
           <div>
             <select className='select-options' onChange={(e) => setSort(e.target.value)}>
               <option disabled selected>Price</option>
@@ -77,11 +73,12 @@ const AllProducts = () => {
             </select>
           </div>
         </div>
-
-        <div>
+        <div className='btn-reset'>
           <button onClick={resetFilters} > Reset Filters </button>
         </div>
-
+        <div className='hidden-btn-reset'>
+          <span onClick={resetFilters}>RESET</span>
+        </div>
       </div>
       <Popular prods={prods} filters={filters} sort={sort} />
       <Footer />

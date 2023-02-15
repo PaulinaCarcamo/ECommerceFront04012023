@@ -38,28 +38,15 @@ const CategProducts = () => {
       <h1>OUR PRODUCTS</h1>
       <div className='filter-wrapper'>
         <div className='all-filters'>
-          <div >
-
-            <div>
-              <select className='select-options' name='brand' onChange={filterItems}>
-                <option disabled selected>Brand</option>
-                <option>Philips</option>
-                <option>TDK</option>
-                <option>Basf</option>
-                <option>Maxell</option>
-              </select>
-            </div>
-          </div>
-
-          {/* <div>
-            <select className='select-options' name='categories' onChange={filterItems}>
-              <option disabled selected>Type</option>
-              <option>typei</option>
-              <option>typeii</option>
-              <option>typeiv</option>
+          <div>
+            <select className='select-options' name='brand' onChange={filterItems}>
+              <option disabled selected>Brand</option>
+              <option>Philips</option>
+              <option>TDK</option>
+              <option>Basf</option>
+              <option>Maxell</option>
             </select>
-          </div> */}
-
+          </div>
           <div>
             <select className='select-options' onChange={(e) => setSort(e.target.value)}>
               <option disabled selected>Price</option>
@@ -68,11 +55,14 @@ const CategProducts = () => {
             </select>
           </div>
         </div>
-
         <div>
-          <button onClick={resetFilters} > Reset Filters </button>
+          <div className='btn-reset'>
+            <button onClick={resetFilters} > Reset Filters </button>
+          </div>
+          <div className='hidden-btn-reset'>
+            <span onClick={resetFilters}>RESET</span>
+          </div>
         </div>
-
       </div>
       <Products categ={categ} filters={filters} sort={sort} />
       <Footer />

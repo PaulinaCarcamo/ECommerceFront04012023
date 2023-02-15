@@ -9,9 +9,35 @@
     gap: 10px;
 }
 
+.hidden-btn-reset {
+    display: none;
+}
+
+
 @media only screen and (max-width: 1024px) {
     .filter-wrapper {
-        margin: 30px 0px;
         justify-content: space-around;
+        margin: 25px 10px;
     }
+
+    .all-filters {
+        font-size: 12px;
+    }
+
+    .all-filters .select-options {
+        font-size: 12px;
+    }
+
+    .btn-reset {
+        display: none;
+    }
+
+    .hidden-btn-reset {
+        display: flex;
+        border: none;
+        align-items: center;
+        font-weight: 500;
+        font-size: 12px;
+    }
+
 }

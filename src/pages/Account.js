@@ -2,6 +2,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, Navigate, redirect, useNavigate } from 'react-router-dom';
 import { HomeOutlined, ShoppingBagOutlined, ShoppingCartOutlined, VpnKey } from '@mui/icons-material';
 
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+
 import Ads from '../components/Ads.js';
 import Navbar from '../components/Navbar.js';
 import Footer from '../components/Footer.js';
@@ -9,6 +13,7 @@ import './account.css';
 import { logoutUser } from '../redux/userRedux.js';
 import Home from './Home.js';
 import { useEffect, useState } from 'react';
+import { Button } from '@mui/material';
 
 //ACCOUNT SHOWS USER INFORMATION AFTER REGISTRATION
 
@@ -20,114 +25,154 @@ const Profile = () => {
 
     const logout = () => {
         dispatch(logoutUser())
-        .then (
-            navigate('/', {replace: true})
-        )
+            .then(
+                navigate('/', { replace: true })
+            )
     }
 
     return (
         <div>
-
-            <div>
-                <div>
-                    <Ads />
-                    <Navbar />
-                    <div className='acct-wrapper'>
-                        <h1>WELCOME
-                            {user.username}
-                        </h1>
-                        <div className='profile'>
-                            <div className='acct-left'>
-                                <div>
-                                    <h2>WE ARE GLAD TO SEE YOU AGAIN!</h2>
-                                    {/* <h2>{user.username}</h2>
-                            <h3>{user.email}</h3> */}
-                                </div>
-                                <div className='acct-elements'>
-                                    {/* <Link to='/allproducts'>
-                                <div><button>GO SHOPPING</button></div>
-                            </Link> */}
-                                    <div className='Actions-links'>
-                                        <Link to='/allproducts' className='txt-flex'>
-                                            <ShoppingBagOutlined />
-                                            KEEP SHOPPING
-                                        </Link>
-                                        <Link to='/' className='txt-flex'>
-                                            <HomeOutlined />
-                                            TO HOME PAGE
-                                        </Link>
-                                        <Link to='/cart' className='txt-flex'>
-                                            <ShoppingCartOutlined />
-                                            CHECK OUT CART
-                                        </Link>
-
-                                        <Link className='txt-flex'
-                                            onClick={() => {
-                                                logout();
-
-                                            }}
-                                        >
-                                            <VpnKey />
-                                            LOG OUT
-                                        </Link>
-
-                                        {/* <Link className='txt-flex'
-                                            onClick={() => {
-                                                logout();
-                                            }} >
-                                            <VpnKey />
-                                            LOG OUT
-                                        </Link> */}
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className='acct-right'>
-                                <div className='acct-elements'>
-                                    <div>
-                                        <h2>Profile</h2>
-                                        <input className='acct-input'
-                                        // disabled placeholder={user.username}
-                                        />
-                                        <input className='acct-input' placeholder="last name" />
-                                        <input className='acct-input'
-                                        // disabled placeholder={user.email}
-                                        />
-                                        <input className='acct-input' placeholder="username" />
-                                        <input className='acct-input' placeholder="country" />
-                                        <input className='acct-input' placeholder="city" />
-                                        <input className='acct-input' placeholder="address" />
-                                        <input className='acct-input' placeholder="phone" />
-                                    </div>
-                                    <div><button>UPDATE</button></div>
-                                </div>
-
-                                <div className='acct-elements'>
-                                    <div>
-                                        <h2>Orders</h2>
-                                        <input className='acct-input' placeholder="Order #1" />
-                                        <input className='acct-input' placeholder="21/05/2000" />
-                                        <input className='acct-input' placeholder="Order #2" />
-                                        <input className='acct-input' placeholder="09/07/3000" />
-                                        <input className='acct-input' placeholder="Order #3" />
-                                        <input className='acct-input' placeholder="15/09/1999" />
-                                    </div>
-                                </div>
-
-                                <div className='acct-elements'>
-                                    <div>
-                                        <h2>Password</h2>
-                                        <input className='acct-input' placeholder="password" />
-                                        <input className='acct-input' placeholder="new password" />
-                                    </div>
-                                    <div><button>UPDATE</button></div>
-                                </div>
-                            </div>
+            <Ads />
+            <Navbar />
+            <div className='acct-wrapper'>
+                <h1>HELLO {user.username}!</h1>
+                <div className='acct'>
+                    <div className='acct-links-wrapper'>
+                        <div>
+                            <h2>WELCOME BACK</h2>
+                        </div>
+                        <div className='acct-links'>
+                            <Link to='/allproducts' className='txt-flex'>
+                                <ShoppingBagOutlined />
+                                KEEP SHOPPING
+                            </Link>
+                            <Link to='/' className='txt-flex'>
+                                <HomeOutlined />
+                                TO HOME PAGE
+                            </Link>
+                            <Link to='/cart' className='txt-flex'>
+                                <ShoppingCartOutlined />
+                                CHECK OUT CART
+                            </Link>
+                            <Link className='txt-flex'
+                                onClick={() => {
+                                    logout();
+                                }}
+                            >
+                                <VpnKey />
+                                LOG OUT
+                            </Link>
                         </div>
                     </div>
-                    <Footer />
+
+                    <div className='profile'>
+                        <h2>Profile</h2>
+                        <Box
+                            component="form"
+                            sx={{
+                                '& .MuiTextField-root': { m: 1, width: '35ch' },
+                            }}
+                            noValidate
+                            autoComplete="off"
+                        >
+                            <TextField
+                                label="Name"
+                                id="outlined-size-normal"
+                                defaultValue={user.username}
+                                inputProps={{ style: { textTransform: "capitalize" } }}
+                            />
+
+                            <TextField
+                                label="Lastname"
+                                id="outlined-size-normal"
+                                defaultValue="Lastname"
+                                inputProps={{ style: { textTransform: "capitalize" } }}
+                            />
+
+                            <TextField
+                                label="Email"
+                                id="outlined-size-normal"
+                                defaultValue={user.email}
+                                disabled
+                            />
+
+                            <TextField
+                                label="Address"
+                                id="outlined-size-normal"
+                                defaultValue="Normal"
+                                inputProps={{ style: { textTransform: "capitalize" } }}
+                            />
+
+                            <TextField
+                                label="City"
+                                id="outlined-size-normal"
+                                defaultValue="Normal"
+                                inputProps={{ style: { textTransform: "capitalize" } }}
+                            />
+
+                            <TextField
+                                label="Country"
+                                id="outlined-size-normal"
+                                defaultValue="Normal"
+                                inputProps={{ style: { textTransform: "capitalize" } }}
+                            />
+                        </Box>
+
+                        <div>
+                            <Button>UPDATE</Button>
+                        </div>
+
+                        <h2>Orders</h2>
+                        <Box
+                            component="form"
+                            sx={{
+                                '& .MuiTextField-root': { m: 1, width: '35ch' },
+                            }}
+                            noValidate
+                            autoComplete="off"
+                        >
+                            <TextField label="Order 1"
+                                id="outlined-size-normal"
+                                defaultValue="Normal" />
+
+                            <TextField label="Order 2"
+                                id="outlined-size-normal"
+                                defaultValue="Normal" />
+
+                            <TextField label="Order 3"
+                                id="outlined-size-normal"
+                                defaultValue="Normal" />
+
+                            <TextField label="Order 4"
+                                id="outlined-size-normal"
+                                defaultValue="Normal" />
+
+                        </Box>
+
+                        <h2>Password</h2>
+                        <Box
+                            component="form"
+                            sx={{
+                                '& .MuiTextField-root': { m: 1, width: '35ch' },
+                            }}
+                            noValidate
+                            autoComplete="off"
+                        >
+                            <TextField label="Current password"
+                                id="outlined-size-normal"
+                                defaultValue="Normal" />
+
+                            <TextField label="New password"
+                                id="outlined-size-normal"
+                                defaultValue="Normal" />
+                        </Box>
+                        <div>
+                            <Button>UPDATE</Button>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 };

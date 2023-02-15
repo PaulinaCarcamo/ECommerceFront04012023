@@ -1,93 +1,70 @@
 .acct-wrapper {
     width: 100%;
-    border-top: 2px solid #000000;
-    border-bottom: 2px solid #000000;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
 }
 
 .acct-wrapper h1 {
     text-transform: uppercase;
 }
 
-.profile {
+.acct {
     display: flex;
+    gap: 40px;
+    border-top: 2px solid #000;
 }
 
-.acct-left {
-    flex: 1;
-    padding-left: 40px;
-    border-top: 2px solid #000000;
-    border-right: 2px solid #000000;
-    background: linear-gradient(#ffffff49,
-            #ffffff93),
-        url("https://www.headlessduplicatedtapes.com/images/cassettes/new_Z_b_matne%CC%8C%20bi%CC%81la%20na%20bi%CC%81le%CC%81_1.jpg") center;
+.acct-links-wrapper {
+    background: linear-gradient(#ffffff49, #ffffff93),
+        url("../images//white-cassette-bg.jpg") center;
     background-size: cover;
+    padding-left: 30px;
+    width: 35vw;
+    border-right: 2px solid #000;
 }
 
-.acct-left h2 {
-    text-transform: uppercase;
+.acct-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.acct-links li {
-    margin: 20px 0px;
-}
-
-.acct-right {
-    flex: 3;
-    border-top: 2px solid #000000;
-    padding-left: 40px;
-    padding-bottom: 40px;
-}
-
-.acct-input {
-    min-width: 40%;
-    margin: 20px 10px 0px 0px;
-    padding: 10px;
-}
-
-.acct-elements h2 {
-    margin-top: 40px;
-    margin-bottom: 0px;
-}
-
-.acct-left .acct-elements {
-    text-align: justify;
-}
-
-.Actions-links .txt-flex {
+.acct-links .txt-flex {
     text-decoration: none;
 }
 
-@media only screen and (max-width: 1024px) {
-    .acct-wrapper {
-        border-top: 1.5px solid #000000;
-        border-bottom: 1.5px solid #000000;
-    }
+.profile {
+    padding-bottom: 20px;
+}
 
-    .profile {
-        display: flex;
+@media only screen and (max-width: 1024px) {
+    .acct {
         flex-direction: column;
     }
 
-    .acct-left {
-        padding: 10px;
+    .acct-links-wrapper {
+        width: 100%;
         border-right: none;
-        border-top: 1.5px solid #000000;
+        padding-bottom: 35px;
+        border-bottom: 1.5px solid #000;
     }
 
-    .acct-left h2 {
-        letter-spacing: 5px;
-        margin: 10px 0;
+    .acct-links-wrapper h2 {
+        padding: 20px 0;
     }
 
-    .acct-left button {
-        display: none;
+    .profile {
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
-    .acct-right {
-        border-top: 1.5px solid #000000;
+    .profile h2 {
+        margin-left: 5px;
     }
 
-    .acct-input {
-        width: 80%;
+    .outlined-size-normal {
+        width: 50%;
     }
 }

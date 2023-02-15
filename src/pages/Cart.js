@@ -1,4 +1,4 @@
-import { DeleteForever, RemoveCircleOutlineRounded, AddCircleOutlineRounded } from '@mui/icons-material';
+import { DeleteForever, RemoveCircleOutlineRounded, AddCircleOutlineRounded, DeleteOutline, DeleteOutlined, Delete, DeleteRounded, DeleteForeverTwoTone, DeleteForeverRounded } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -63,17 +63,19 @@ const Cart = () => {
                                         </div>
                                         <div className='price'><h2>$ {item.price}</h2></div>
 
-                                        <div className='bag-del'>
-                                            <h3 onClick={() => dispatch(decrementQuantity(item.id))}>
-                                                <RemoveCircleOutlineRounded className='cart-icons' /></h3>
+                                        <div className='bag-actions'>
+
+                                            <div className='cart-icons'
+                                                onClick={() => dispatch(decrementQuantity(item.id))}>
+                                                <RemoveCircleOutlineRounded /></div>
                                             <h3>{item.quantity}</h3>
-                                            <h3 onClick={() => dispatch(incrementQuantity(item.id))}>
-                                                <AddCircleOutlineRounded className='cart-icons' /></h3>
-                                            <p className='cart-icons'>
+                                            <div onClick={() => dispatch(incrementQuantity(item.id))}>
+                                                <AddCircleOutlineRounded className='cart-icons' /></div>
+                                            <div className='cart-icons'>
                                                 <DeleteForever className='icon' onClick={() =>
-                                                    dispatch(removeProduct(item.id))}>
-                                                </DeleteForever>
-                                            </p>
+                                                    dispatch(removeProduct(item.id))}
+                                                />
+                                            </div>
                                         </div>
 
                                     </div>

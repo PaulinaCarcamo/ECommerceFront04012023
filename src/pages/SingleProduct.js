@@ -58,8 +58,8 @@ const Product = () => {
             <Navbar />
             <Ads />
             <div className='product-wrapper'>
-                {/* <h2 className='hidden-title'>{product.title}</h2>
-                <h2 className='hidden-price'>$ {product.price}</h2> */}
+                <h2 className='hidden-title'>{product.title}</h2>
+                <h2 className='hidden-price'>$ {product.price}</h2>
                 <div>
                     <img src={product.img} className='product-img' alt='img'></img>
                 </div>
@@ -114,7 +114,7 @@ const Product = () => {
                             />
 
                         </div>
-                        <div className='Actions-links'>
+                        <div className='actions-links'>
                             <Link to='/allproducts' className='txt-flex'>
                                 <ShoppingBagOutlined />
                                 KEEP SHOPPING

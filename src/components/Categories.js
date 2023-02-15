@@ -11,7 +11,7 @@ const Categories = () => {
                     <Category item={item} />
                 ))}
             </div>
-            <h1>POPULAR PRODUCTS</h1>
+            <h1 className='pop-title'>MOST SOLD TAPES</h1>
         </div>
     )
 };

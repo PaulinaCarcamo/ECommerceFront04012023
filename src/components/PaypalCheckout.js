@@ -2,6 +2,8 @@ import { PayPalButtons } from '@paypal/react-paypal-js';
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import './paypalCheckout.css'
+
 const PaypalCheckout = (props) => {
     const { product } = props
     const [paidFor, setPaidFor] = useState(false)
@@ -9,7 +11,7 @@ const PaypalCheckout = (props) => {
     const navigate = useNavigate()
 
     // CALL BACKEND FUNCTION TO FULFILL ORDER
-        const handleApprove = (orderID) => {
+    const handleApprove = (orderID) => {
         setPaidFor(true)
     }
 
