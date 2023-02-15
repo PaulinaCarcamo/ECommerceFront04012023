@@ -1,4 +1,4 @@
-import { PayPalButtons } from '@paypal/react-paypal-js';
+import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js';
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -23,31 +23,33 @@ const PaypalCheckout = (props) => {
         alert(error)
 
     return (
-        <PayPalButtons
-            createOrder={(data, actions) => {
-                return actions.order.create({
-                    purchase_units: [
-                        {
-                            amount: {
-                                value: product
+        <PayPalScriptProvider options={{ "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID }}>
+            <PayPalButtons
+                createOrder={(data, actions) => {
+                    return actions.order.create({
+                        purchase_units: [
+                            {
+                                amount: {
+                                    value: product
+                                }
                             }
-                        }
-                    ]
-                })
-            }}
+                        ]
+                    })
+                }}
 
-            onApprove={async (data, actions) => {
-                const order = await actions.order.capture()
-                console.log("order", order);
+                onApprove={async (data, actions) => {
+                    const order = await actions.order.capture()
+                    console.log("order", order);
 
-                handleApprove(data.orderID)
-            }}
+                    handleApprove(data.orderID)
+                }}
 
-            onError={(err) => {
-                setError(err)
-                console.log("Paypal checkout onError", err);
-            }}
-        />
+                onError={(err) => {
+                    setError(err)
+                    console.log("Paypal checkout onError", err);
+                }}
+            />
+        </PayPalScriptProvider>
     )
 };
 
