@@ -81,7 +81,7 @@ const Profile = () => {
                             <TextField
                                 label="Lastname"
                                 id="outlined-size-normal"
-                                defaultValue="Lastname"
+                                // defaultValue="Lastname"
                                 inputProps={{ style: { textTransform: "capitalize" } }}
                             />
 
@@ -95,21 +95,21 @@ const Profile = () => {
                             <TextField
                                 label="Address"
                                 id="outlined-size-normal"
-                                defaultValue="Normal"
+                                // defaultValue="Normal"
                                 inputProps={{ style: { textTransform: "capitalize" } }}
                             />
 
                             <TextField
                                 label="City"
                                 id="outlined-size-normal"
-                                defaultValue="Normal"
+                                // defaultValue="Normal"
                                 inputProps={{ style: { textTransform: "capitalize" } }}
                             />
 
                             <TextField
                                 label="Country"
                                 id="outlined-size-normal"
-                                defaultValue="Normal"
+                                // defaultValue="Normal"
                                 inputProps={{ style: { textTransform: "capitalize" } }}
                             />
                         </Box>
@@ -129,19 +129,23 @@ const Profile = () => {
                         >
                             <TextField label="Order 1"
                                 id="outlined-size-normal"
-                                defaultValue="Normal" />
+                                // defaultValue="Normal" 
+                                />
 
                             <TextField label="Order 2"
                                 id="outlined-size-normal"
-                                defaultValue="Normal" />
+                                // defaultValue="Normal" 
+                                />
 
                             <TextField label="Order 3"
                                 id="outlined-size-normal"
-                                defaultValue="Normal" />
+                                // defaultValue="Normal"
+                                />
 
                             <TextField label="Order 4"
                                 id="outlined-size-normal"
-                                defaultValue="Normal" />
+                                // defaultValue="Normal" 
+                                />
 
                         </Box>
 
@@ -156,11 +160,13 @@ const Profile = () => {
                         >
                             <TextField label="Current password"
                                 id="outlined-size-normal"
-                                defaultValue="Normal" />
+                                // defaultValue="Normal" 
+                                />
 
                             <TextField label="New password"
                                 id="outlined-size-normal"
-                                defaultValue="Normal" />
+                                // defaultValue="Normal" 
+                                />
                         </Box>
                         <div>
                             <Button>UPDATE</Button>
