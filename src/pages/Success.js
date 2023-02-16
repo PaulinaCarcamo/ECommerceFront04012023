@@ -16,6 +16,8 @@ const Success = () => {
 
     const rootRef = React.useRef(null);
 
+    const [order, setOrder] = React.useState("");
+
     return (
         <div>
             <Ads />
@@ -97,6 +99,15 @@ const Success = () => {
                                         GO TO LOGIN
                                     </Link>
                                 </div>
+
+
+                                {/* const order = await actions.order.capture()
+                    console.log("order", order);
+                    handleApprove(data.orderID) */}
+
+                    <div>{order}</div>
+
+
                             </div>
                         </Box>
                     </Modal>
