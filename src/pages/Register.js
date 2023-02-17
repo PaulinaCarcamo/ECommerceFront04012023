@@ -17,7 +17,7 @@ import { useSelector } from 'react-redux';
 import LoginDialog from '../components/Login.js';
 import { Check, VpnKey } from '@mui/icons-material';
 
-//THIS PAGE SHOWS FORM TO REGISTER NEW USER'S INFORMATION.
+//THIS PAGE SHOWS FORM TO REGISTER NEW USER'S INFORMATION. WHEN USER IS REGISTERED SHOWS MODAL TO LOG IN WITH EMAIL AND PASSWORD.
 
 export default function Register() {
   const [username, setUsername] = useState("");

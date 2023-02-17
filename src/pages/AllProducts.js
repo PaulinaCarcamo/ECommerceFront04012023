@@ -7,7 +7,7 @@ import Footer from '../components/Footer.js';
 import Popular from '../components/Popular.js';
 import './allProducts.css';
 
-//THIS PAGE SHOWS ALL PRODUCTS AND CATEGORIES. PRODUCTS CAN BE FILTERED OR SORTED BY BRAND AND PRICE.
+//THIS PAGE SHOWS ALL PRODUCTS AND CATEGORIES. PRODUCTS CAN BE FILTERED OR SORTED BY TYPE, BRAND AND PRICE.
 
 const AllProducts = () => {
 

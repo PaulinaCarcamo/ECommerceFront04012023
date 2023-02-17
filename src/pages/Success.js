@@ -10,30 +10,17 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import './success.css'
 
-//SUCCESS PAGE IS SHOWN AFTER A PURCHASE.
-
+//SUCCESS PAGE WAS CHANGED BY MODAL IN PAYPAL CHECKOUT BUTTONS.
 
 const Success = () => {
 
     const rootRef = React.useRef(null);
-
-    const [order, setOrder] = React.useState("");
 
     return (
         <div>
             <Ads />
             <Navbar />
             <div className="success-container">
-                {/* <div className="success-wrapper">
-                    <h2>THANK YOU FOR YOUR PURCHASE!</h2>
-                    <span><Mood /></span>
-                    <span><ThumbUpOffAlt /></span>
-                    <div>
-                        <Link to='/allproducts'>
-                            <button>KEEP BUYING TAPES!</button>
-                        </Link>
-                    </div>
-                </div> */}
                 <Box
                     sx={{
                         height: 100,
@@ -100,15 +87,6 @@ const Success = () => {
                                         GO TO LOGIN
                                     </Link>
                                 </div>
-
-
-                                {/* const order = await actions.order.capture()
-                    console.log("order", order);
-                    handleApprove(data.orderID) */}
-
-                    <div>{order}</div>
-
-
                             </div>
                         </Box>
                     </Modal>

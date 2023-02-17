@@ -13,6 +13,8 @@ import Footer from '../components/Footer.js';
 import './singleProduct.css';
 import { HomeOutlined, ShoppingBagOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 
+//THIS PAGE SHOWS SINGLE PRODUCT WITH ITS DESCRIPTION, PRICE, ADD TO CART BUTTON, AND OTHER USEFUL LINKS
+
 const Product = () => {
 
     const location = useLocation();

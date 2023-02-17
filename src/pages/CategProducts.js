@@ -5,9 +5,8 @@ import Navbar from '../components/Navbar.js';
 import Ads from '../components/Ads.js';
 import Products from '../components/Products.js';
 import Footer from '../components/Footer.js';
-import './categProducts.css'
 
-//THIS PAGE SHOWS PRODUCTS CLASSIFIED INTO THEIR OWN CATEGORIES.
+//THIS PAGE SHOWS PRODUCTS CLASSIFIED INTO THEIR OWN CATEGORIES. PRODUCTS CAN BY FILTERED AND SORTED BY BRAND AND PRICE.
 
 const CategProducts = () => {
   const location = useLocation();

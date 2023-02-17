@@ -9,10 +9,15 @@
     gap: 10px;
 }
 
+.select-options {
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 .hidden-btn-reset {
     display: none;
 }
-
 
 @media only screen and (max-width: 1024px) {
     .filter-wrapper {
@@ -39,5 +44,4 @@
         font-weight: 500;
         font-size: 12px;
     }
-
 }

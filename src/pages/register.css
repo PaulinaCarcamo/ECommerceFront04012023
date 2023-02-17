@@ -13,7 +13,6 @@
 .reg-container button {
     background-color: #ffffffcd;
     padding: 20px 30px;
-    /* border-radius: 10px; */
 }
 
 .dialog-wrapper {
@@ -31,32 +30,13 @@
     background-color: transparent;
 }
 
-.success-txt {
-    color: #008000;
-    font-weight: bold;
-    text-align: right;
+@media only screen and (max-width: 1024px) {
+    .dialog-wrapper {
+        padding: 5px;
+        font-size: 12px;
+    }
+
+    .dialog-actions {
+        margin-top: 15px;
+    }
 }
-
-.failed-txt {
-    color: #ff0000;
-    text-align: right;
-}
-
-
-/* @media only screen and (max-width: 1024px) {
-    .reg-container {
-        width: 100%;
-        height: 100%;
-    }
-
-    .reg-wrapper {
-        margin: 30px 10px;
-        width: 90%;
-    }
-
-    .reg-input {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-} */
