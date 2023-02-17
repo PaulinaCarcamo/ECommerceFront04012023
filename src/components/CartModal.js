@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { resetCart } from '../redux/cartRedux.js';
-import './modal.css'
+import './cartModal.css'
 
 export default function ConfirmationModal() {
   const [open, setOpen] = React.useState(false);

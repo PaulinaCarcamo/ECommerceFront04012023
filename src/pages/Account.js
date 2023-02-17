@@ -9,7 +9,7 @@ import Ads from '../components/Ads.js';
 import Navbar from '../components/Navbar.js';
 import Footer from '../components/Footer.js';
 import './account.css';
-import { logoutUser } from '../redux/userRedux.js';
+import LogoutModal from '../components/LogoutModal.js';
 
 //ACCOUNT SHOWS USER INFORMATION AFTER REGISTRATION
 
@@ -18,13 +18,6 @@ const Profile = () => {
     const user = useSelector((state) => state.user.currentUser)
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
-    const logout = () => {
-        dispatch(logoutUser())
-            .then(
-                navigate('/', { replace: true })
-            )
-    }
 
     return (
         <div>
@@ -50,14 +43,9 @@ const Profile = () => {
                                 <ShoppingCartOutlined />
                                 CHECK OUT CART
                             </Link>
-                            <Link className='txt-flex'
-                                onClick={() => {
-                                    logout();
-                                }}
-                            >
-                                <VpnKey />
-                                LOG OUT
-                            </Link>
+
+                            <LogoutModal />
+
                         </div>
                     </div>
 

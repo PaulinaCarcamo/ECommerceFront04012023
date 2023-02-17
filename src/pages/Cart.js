@@ -10,7 +10,7 @@ import Ads from '../components/Ads.js';
 import Footer from '../components/Footer.js';
 import './cart.css';
 import emptycart from '../images/empty-cart.png'
-import ConfirmationModal from '../components/Modal.js';
+import ConfirmationModal from '../components/CartModal.js';
 
 //SHOPPING CART SHOWS PRODUCTS SELECTED AND SUMMARY OF THE ORDER MADE BY USER.
 
