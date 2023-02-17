@@ -24,6 +24,8 @@ const PaypalCheckout = (props) => {
     //     navigate("/success", { replace: true })
     //         }
 
+    const [data, setData] = useState()
+
     const onCreateOrder = (data, actions) => {
         return actions.order.create({
             purchase_units: [
@@ -38,7 +40,7 @@ const PaypalCheckout = (props) => {
 
     const onApproveOrder = (data, actions) => {
         return actions.order.capture().then((details) => {
-            const name = details.payer.name.given_name;
+            // const name = details.payer.name.given_name;
             const payer = details.payer.name.given_name;
             const surname = details.payer.name.surname;
             const status = details.status;
@@ -57,6 +59,9 @@ const PaypalCheckout = (props) => {
             );
 
             openSnackbar();
+            // setData(purchase_units[0].shipping.name.full_name)
+            setData(payer + " " + surname + " " + status)
+            console.log(data);
         });
     }
 
@@ -92,33 +97,36 @@ const PaypalCheckout = (props) => {
             />
 
             {!paidFor &&
-                <Snackbar
-                    anchorOrigin={{
-                        horizontal: "left",
-                        vertical: "bottom",
-                    }}
-                    ContentProps={{
-                        sx: {
-                            background: "purple"
+
+
+                    <Snackbar
+                        anchorOrigin={{
+                            horizontal: "left",
+                            vertical: "bottom",
+                        }}
+                        ContentProps={{
+                            sx: {
+                                background: "purple"
+                            }
+                        }}
+                        open={open}
+                        // autoHideDuration={5000}
+                        message={("PURCHASE SUCCESSFULLY COMPLETED", `${data}`)}
+                        onClose={closeSnackbar}
+                        action={
+                            <div>
+                                <IconButton
+                                    size="small"
+                                    aria-label="close"
+                                    color="inherit"
+                                    onClick={closeSnackbar}
+                                >
+                                    <Close fontSize="small" />
+                                </IconButton>
+                            </div>
                         }
-                    }}
-                    open={open}
-                    autoHideDuration={3000}
-                    message={("PURCHASE SUCCESSFULLY COMPLETED")}
-                    onClose={closeSnackbar}
-                    action={
-                        <div>
-                            <IconButton
-                                size="small"
-                                aria-label="close"
-                                color="inherit"
-                                onClick={closeSnackbar}
-                            >
-                                <Close fontSize="small" />
-                            </IconButton>
-                        </div>
-                    }
-                />
+                    />
+
             }
         </PayPalScriptProvider>
     )
