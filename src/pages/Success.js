@@ -12,6 +12,7 @@ import './success.css'
 
 //SUCCESS PAGE IS SHOWN AFTER A PURCHASE.
 
+
 const Success = () => {
 
     const rootRef = React.useRef(null);
