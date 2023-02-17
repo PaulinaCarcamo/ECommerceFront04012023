@@ -1,0 +1,12 @@
+.checkout-icons {
+    display: flex;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.checkout-icon {
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    gap: 5px;
+}
