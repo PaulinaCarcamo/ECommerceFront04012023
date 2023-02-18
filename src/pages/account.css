@@ -55,17 +55,22 @@
 
     .acct-links-wrapper {
         width: 100%;
+        padding-left: 0;
         border-right: none;
-        padding-bottom: 35px;
+        padding-bottom: 30px;
         border-bottom: 1.5px solid #000;
     }
 
     .acct-links-wrapper h2 {
-        padding: 20px 0;
+        padding: 15px;
+    }
+
+    .acct-links {
+        padding-left: 10px;
     }
 
     .profile {
-        margin: 10px;
+        margin: 0 10px;
         display: flex;
         flex-direction: column;
         gap: 20px;

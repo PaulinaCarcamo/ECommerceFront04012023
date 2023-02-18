@@ -56,6 +56,9 @@ const PaypalCheckout = (props) => {
             const orderid = details.id;
             const purchase = JSON.stringify(details.purchase_units);
             const purchase_units = JSON.parse(purchase);
+            const value = details.purchase_units[0].amount.value;
+            const address = details.purchase_units[0].shipping.address.address_line_1
+            const region = details.purchase_units[0].shipping.address.admin_area_2
             console.log(details);
 
             handleOpen();
@@ -65,9 +68,9 @@ const PaypalCheckout = (props) => {
                 "Thank you for your purchase " + payer + " " + surname + ". "
                 + "Your order has been " + status + ". "
                 + "Order ID: " + orderid + ". "
-                + "Total price: $" + purchase_units[0].amount.value + ". "
-                + "Address: " + purchase_units[0].shipping.address.address_line_1 + ", "
-                + purchase_units[0].shipping.address.admin_area_2
+                + "Total price: $" + value + ". "
+                + "Address: " + address + ", "
+                + region
             )
             console.log(data);
         });

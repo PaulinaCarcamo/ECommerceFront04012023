@@ -38,7 +38,7 @@ export default function Register() {
       data: {
         username,
         email,
-        password,
+        password
       },
     };
 

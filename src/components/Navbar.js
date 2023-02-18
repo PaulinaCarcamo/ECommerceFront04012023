@@ -51,13 +51,14 @@ const Navbar = () => {
                                 },
                             }}
                         >
-                            <Tab label="Chrome" />
-                            <Tab label="Metal" />
+                            <Tab label="Basf" />
                             <Tab label="Ferric" />
                             <Tab label="Philips" />
+                            <Tab label="Chrome" />
                             <Tab label="TDK" />
+                            <Tab label="Metal" />
                             <Tab label="Maxell" />
-                            <Tab label="Basf" />
+
                         </Tabs>
                     </Box>
                 </div>
