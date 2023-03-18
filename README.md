@@ -1,6 +1,6 @@
 # eCommerce MERN Stack
 
-The aim of this project is to develop an e-commerce application to display a products catalog, filter items, simulate transactions, register users, login users, take items into a shopping cart section, among others. It integrates Paypal Sandbox to make transactions and MongoDB to display products data.
+The aim of this project is to develop an e-commerce application to display a products catalog, filter items, simulate transactions, register users, login users, take items into a shopping cart section, among others. It integrates Paypal Sandbox to make transactions and MongoDB to display products data. This project was deployed on Vercel.
 
 ## URL
 
@@ -18,7 +18,7 @@ The aim of this project is to develop an e-commerce application to display a pro
 
 - Add items to shopping cart.
 - Keep shopping cart items onhold.
-- Make transactions with Paypal Sandbox
+- Make transactions with Paypal Sandbox.
 - Register user and create new account.
 - Login to an existing account.
 - Filter products by categories, price or brand.
