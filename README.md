@@ -8,20 +8,6 @@ The aim of this project is to develop an e-commerce application to display a pro
 
 [Back-end repository](https://github.com/PaulinaCarcamo/ECommerceBack04012023)
 
-## Run Locally
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run start
-```
-
 ## Tech Stack
 
 **Front-end:** React, Redux, CSS, MUI
@@ -39,12 +25,18 @@ Start the server
 - Navigate through different sections.
 - Visualize site from phone or desktop.
 
-## Deployment
+## Run Locally
 
-Deploy project
+Install dependencies
 
 ```bash
-  npm run deploy
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
 ```
 
 ## Author
